@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="1fefe796-fd25-4785-80fc-eac8f86ba8bb" name="ContasController_Post" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="24d51a49-b991-4979-91e6-e72f3bd99ea9" name="ContasController_Post" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification Id="e9bbd961-f42b-4687-8a3c-b85c7a2c7b1d" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="c4380fbc-3bab-4702-9a72-0d35412490fc" LastKnownName="this : ContasController" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="28567164-eaa7-414c-88ab-fdac7a971674" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="7ed017a8-e994-41ed-b55b-2b54f2241674" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="0b300c02-f375-40d6-bc08-f091d9db2930" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="bf64f2d6-d1a5-4207-9c81-03cc359bd138" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="e96218e9-7af1-4be0-8b0c-1f177f4996d7" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="7ed017a8-e994-41ed-b55b-2b54f2241674" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="ce744c77-1c2e-41f9-9b78-112b9a6a8fef" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c4380fbc-3bab-4702-9a72-0d35412490fc" LastKnownName="this : ContasController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget Id="1fc37022-b526-48d9-ab7e-12352a5a677a" name="LostFoundTarget" />
+          <messageOccurrenceSpecification Id="0b300c02-f375-40d6-bc08-f091d9db2930" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c4380fbc-3bab-4702-9a72-0d35412490fc" LastKnownName="this : ContasController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="c45dc619-5227-41bf-ad28-585a901b4aae" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="f7ee0571-8031-4789-833b-39868fd34e73" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="bf1b76f0-25ac-4f97-968d-3e962c50b9fb" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="edf042ff-1cdd-4cb7-b3d1-f84978c8e57a" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="bcca7759-29ea-44f4-93a8-c9d3456a4481" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="8ca1864e-4edc-49b8-aa71-d16fc10079f1" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="c4eee96c-3116-4031-aef0-ab7c53d11df4" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="d5c89582-026c-474b-8bf4-42f0d014314f" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="251d42e7-6e0d-45da-a365-678cb923f09c" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="2a87e0fd-d50d-4d18-94f6-7d1d06b87c7f" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="3bcb164c-bf6e-40e4-807c-65df5e07c2b9" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="bf1b76f0-25ac-4f97-968d-3e962c50b9fb" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="d5dbf737-7982-4881-9e2c-b2a0b75e601d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="bf64f2d6-d1a5-4207-9c81-03cc359bd138" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c4380fbc-3bab-4702-9a72-0d35412490fc" LastKnownName="this : ContasController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="edf042ff-1cdd-4cb7-b3d1-f84978c8e57a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="65fcff49-22d0-471c-87cc-b96425d9876e" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="33557f0d-f45c-42f7-91cb-cac9fdfc074d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="1e6fb6b2-a7c5-4d8a-b61d-4a531be3a043" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="237f426d-e53b-4ba0-af2f-757dc9ab9c3a" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="74de25f8-b425-41c8-a9d4-24312a4aae1d" LastKnownName="MessageOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="275e02c3-3865-4693-bc3b-b76426561a74" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="4d5e4de2-a2c3-49d1-b155-0d9cad72eecc" LastKnownName="ExecutionOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="01f2678e-0c68-4308-acb0-a6c1a08c82b6" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="1e6fb6b2-a7c5-4d8a-b61d-4a531be3a043" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="1a055399-71c6-455a-b373-3ce8a0632bbe" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="237f426d-e53b-4ba0-af2f-757dc9ab9c3a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="bcca7759-29ea-44f4-93a8-c9d3456a4481" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="74de25f8-b425-41c8-a9d4-24312a4aae1d" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="60b7eb39-9e89-428f-a990-fb564c88c174" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="4d5e4de2-a2c3-49d1-b155-0d9cad72eecc" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="275e02c3-3865-4693-bc3b-b76426561a74" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="5433bbd2-a684-4c97-a5f3-b79ee25362f2" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="10f84b08-d7ed-40be-bc39-c47d1860e046" LastKnownName="MessageOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="224b1708-83d0-4ae3-b21a-3e4d206b6b74" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="6b7c5e6c-c9bf-42bd-a6a0-533e4905f0a1" LastKnownName="ExecutionOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="275e02c3-3865-4693-bc3b-b76426561a74" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="52d534d5-fc7e-4d4b-bbe4-6156010a03dd" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="5433bbd2-a684-4c97-a5f3-b79ee25362f2" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="10f84b08-d7ed-40be-bc39-c47d1860e046" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="9d9ce0d5-4e4a-4bae-b751-85db4b60c88a" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="6b7c5e6c-c9bf-42bd-a6a0-533e4905f0a1" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="224b1708-83d0-4ae3-b21a-3e4d206b6b74" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="50626582-129d-4be1-ad9b-7fd6775d8db0" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="224b1708-83d0-4ae3-b21a-3e4d206b6b74" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="d803153c-c321-402d-a529-59c2a8ea91e2" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="50626582-129d-4be1-ad9b-7fd6775d8db0" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="6b7c5e6c-c9bf-42bd-a6a0-533e4905f0a1" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="34bc54b9-a692-4b9b-89d9-9991cc6f9df6" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="4d5e4de2-a2c3-49d1-b155-0d9cad72eecc" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="05e0335f-460c-496b-9f19-f40db0c4cbe1" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="8ca1864e-4edc-49b8-aa71-d16fc10079f1" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="01f2678e-0c68-4308-acb0-a6c1a08c82b6" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="33557f0d-f45c-42f7-91cb-cac9fdfc074d" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="2089de41-1d16-4c5c-874e-026a812692cf" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" LastKnownName="conta : Conta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="cb88dfc2-7656-48c9-8cd3-737978223a2e" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="8bb1a0bb-38d9-4263-a1f3-7061fd74b4ad" LastKnownName="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="298d2226-487c-4571-b319-c6039e418574" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="54678b2d-2449-46aa-94d4-fd2368500839" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="c4dd9117-881a-4f4b-99bf-001e373d1df4" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="9cccb768-2d5f-4e72-b081-3672ae438e6a" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="54678b2d-2449-46aa-94d4-fd2368500839" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="46dd4f18-e1bc-4082-b2ca-6f7a6614d909" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="8bb1a0bb-38d9-4263-a1f3-7061fd74b4ad" LastKnownName="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c4dd9117-881a-4f4b-99bf-001e373d1df4" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="8bb1a0bb-38d9-4263-a1f3-7061fd74b4ad" LastKnownName="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c4eee96c-3116-4031-aef0-ab7c53d11df4" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="9cccb768-2d5f-4e72-b081-3672ae438e6a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="8bb1a0bb-38d9-4263-a1f3-7061fd74b4ad" LastKnownName="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="d5c89582-026c-474b-8bf4-42f0d014314f" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="298d2226-487c-4571-b319-c6039e418574" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="be5899e1-1e4a-4012-92b8-599515da74b2" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="8bb1a0bb-38d9-4263-a1f3-7061fd74b4ad" LastKnownName="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="24897658-35df-4050-a931-0f4dd5d467b9" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="44ca4bdc-43e7-4a10-ba22-16a27a552e68" LastKnownName="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="b38774ba-74ad-43d2-829d-591021a4d102" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="bbd64645-cdfb-47fc-a0e5-916a8890076e" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="7ae33145-3042-490e-a6f9-9f62433aafc7" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="7ab375dd-c2d9-4b14-8a0d-8610b19db52e" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="bbd64645-cdfb-47fc-a0e5-916a8890076e" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="a9d56b89-739c-42b7-b6e0-eedc4cc695d7" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="44ca4bdc-43e7-4a10-ba22-16a27a552e68" LastKnownName="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="251d42e7-6e0d-45da-a365-678cb923f09c" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="7ae33145-3042-490e-a6f9-9f62433aafc7" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="44ca4bdc-43e7-4a10-ba22-16a27a552e68" LastKnownName="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="7ab375dd-c2d9-4b14-8a0d-8610b19db52e" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="44ca4bdc-43e7-4a10-ba22-16a27a552e68" LastKnownName="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="2a87e0fd-d50d-4d18-94f6-7d1d06b87c7f" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="b38774ba-74ad-43d2-829d-591021a4d102" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="0b988a4c-f1d7-4d4b-9b56-fb0207c107dd" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="44ca4bdc-43e7-4a10-ba22-16a27a552e68" LastKnownName="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="e96218e9-7af1-4be0-8b0c-1f177f4996d7" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c4380fbc-3bab-4702-9a72-0d35412490fc" LastKnownName="this : ContasController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="3bcb164c-bf6e-40e4-807c-65df5e07c2b9" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="f7ee0571-8031-4789-833b-39868fd34e73" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="35451f15-f75a-4cd8-b09a-e88b17afc65a" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="89234152-106f-446d-99a1-3b927c896240" LastKnownName="this._gerenciamentoConta : GerenciamentoConta" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="28567164-eaa7-414c-88ab-fdac7a971674" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="89e57932-44f3-4ec3-97e0-d14ef0bb6d98" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c4380fbc-3bab-4702-9a72-0d35412490fc" LastKnownName="this : ContasController" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="c4380fbc-3bab-4702-9a72-0d35412490fc" name="this : ContasController" isActor="false" lifelineDisplayName="this : ContasController" referencedInstance="(Assembly=&quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController ObjectInstance=&quot;Object instance 2&quot;)" referencedType="CardapioDigital‎.Servico‎.Controllers‎.ContasController">
+            <referencesInternal>
+              <reference Id="027930b3-f1bf-417b-9ba6-4c6dc50757f2" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Api.Controllers)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController)&quot;)" tag="DGQL" />
+              <reference Id="60b9ec34-68cf-4699-ba57-8827e554b41c" handle="(Assembly=&quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="7ed017a8-e994-41ed-b55b-2b54f2241674" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="28567164-eaa7-414c-88ab-fdac7a971674" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="89234152-106f-446d-99a1-3b927c896240" name="this._gerenciamentoConta : GerenciamentoConta" isActor="false" lifelineDisplayName="this._gerenciamentoConta : GerenciamentoConta" referencedInstance="(Assembly=&quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController Member=_gerenciamentoConta ObjectInstance=&quot;Object instance 3&quot;)" referencedType="CardapioDigital‎.Aplicacao‎.Servicos‎.GerenciamentoConta">
+            <referencesInternal>
+              <reference Id="68311ad6-6816-4b27-beaa-564bc61121ee" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Aplicacao.Servicos)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta)&quot;)" tag="DGQL" />
+              <reference Id="55da0d0a-5225-49ac-866f-e1b093fb5fff" handle="(Assembly=&quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="bf1b76f0-25ac-4f97-968d-3e962c50b9fb" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f7ee0571-8031-4789-833b-39868fd34e73" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="e72e3ef3-3c14-4aef-93b0-dcd01c3c5fea" name="conta : Conta" isActor="false" lifelineDisplayName="conta : Conta" referencedInstance="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta ObjectInstance=&quot;Object instance 5&quot;)" referencedType="CardapioDigital‎.Dominio‎.Conta‎.Conta">
+            <referencesInternal>
+              <reference Id="e0459207-db06-4c58-9719-c367023ef8c4" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Conta)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta)&quot;)" tag="DGQL" />
+              <reference Id="31e81841-51c2-4b7a-b402-bfed29e2640f" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="1e6fb6b2-a7c5-4d8a-b61d-4a531be3a043" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="33557f0d-f45c-42f7-91cb-cac9fdfc074d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="8bb1a0bb-38d9-4263-a1f3-7061fd74b4ad" name="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" isActor="false" lifelineDisplayName="this._gerenciamentoConta._repositorioContas : IRepositorioDeContas" referencedInstance="(Assembly=&quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta Member=_repositorioContas ObjectInstance=&quot;Object instance 15&quot;)" referencedType="CardapioDigital‎.Dominio‎.Conta‎.IRepositorioDeContas">
+            <referencesInternal>
+              <reference Id="2d70cb55-ed63-412b-be1a-79ba62eaf6d6" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Conta Type=IRepositorioDeContas)&quot;)" tag="DGQL" />
+              <reference Id="f83dfe93-a62b-48fc-b625-88e05680dc7d" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Conta Type=IRepositorioDeContas)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="54678b2d-2449-46aa-94d4-fd2368500839" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="298d2226-487c-4571-b319-c6039e418574" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="44ca4bdc-43e7-4a10-ba22-16a27a552e68" name="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" isActor="false" lifelineDisplayName="this._gerenciamentoConta._unidadeDeTrabalho : IUnidadeDeTrabalho" referencedInstance="(Assembly=&quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta Member=_unidadeDeTrabalho ObjectInstance=&quot;Object instance 17&quot;)" referencedType="CardapioDigital‎.Dominio‎.Core‎.IUnidadeDeTrabalho">
+            <referencesInternal>
+              <reference Id="40c286b2-8a56-4e84-99b8-f6b355b6f624" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Core)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=IUnidadeDeTrabalho)&quot;)" tag="DGQL" />
+              <reference Id="6d41a9a0-a061-4df3-b87c-f4e36edcb152" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Core Type=IUnidadeDeTrabalho)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="bbd64645-cdfb-47fc-a0e5-916a8890076e" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="b38774ba-74ad-43d2-829d-591021a4d102" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="c82cce0d-5b67-4816-a662-b26ae7542762" name="Post" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="4c2e2a1b-ebcf-4de9-81a7-8542c560d9cd" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Api.Controllers)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController Member=(Name=Post OverloadingParameters=[(Assembly=&amp;quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Aplicacao.DTO Type=MesaDto)]))&quot;)" tag="DGQL" />
+              <reference Id="af8cd116-4120-4cb5-957c-b629bd94eaff" handle="(Assembly=&quot;$(be6eca07-264e-4c19-b8d3-c67913271548.OutputPathUri)&quot; Namespace=CardapioDigital.Api.Controllers Type=ContasController Member=(Name=Post OverloadingParameters=[(Assembly=&quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&quot; Namespace=CardapioDigital.Aplicacao.DTO Type=MesaDto)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <lostFoundTargetMoniker Id="1fc37022-b526-48d9-ab7e-12352a5a677a" LastKnownName="LostFoundTarget" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="0b300c02-f375-40d6-bc08-f091d9db2930" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="db0b0d5b-9a7d-4176-a72d-23b81b4470bd" name="CriarConta" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="_gerenciamentoConta.CriarConta(mesa.NumeroMesa)">
+            <referencesInternal>
+              <reference Id="7ca442b3-b150-4fcc-8d4e-fe7843d58fb7" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Aplicacao.Servicos)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta Member=(Name=CriarConta OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=Int32)]))&quot;)" tag="DGQL" />
+              <reference Id="6901e08a-f5d0-4527-b68d-c2210a9b1771" handle="(Assembly=&quot;$(4ffb643f-49f5-4a3f-b2c1-aad36da0960a.OutputPathUri)&quot; Namespace=CardapioDigital.Aplicacao.Servicos Type=GerenciamentoConta Member=(Name=CriarConta OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=Int32)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="bf64f2d6-d1a5-4207-9c81-03cc359bd138" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="edf042ff-1cdd-4cb7-b3d1-f84978c8e57a" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="e355f422-648b-4d20-9030-eb870590b510" name="Create Conta" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="false" signatureText="new Conta(numeroMesa)">
+            <referencesInternal>
+              <reference Id="0b100355-e2bb-4b0a-b85d-4211714553d8" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Conta)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta Member=(Name=.ctor OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=Int32)]))&quot;)" tag="DGQL" />
+              <reference Id="78d70dac-2d4b-498f-b6d9-248eba47b380" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=Int32)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="bcca7759-29ea-44f4-93a8-c9d3456a4481" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="237f426d-e53b-4ba0-af2f-757dc9ab9c3a" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="c8f4390e-96c4-498e-a435-ab26802d78bf" name="Create Conta" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="true" signatureText="this()">
+            <referencesInternal>
+              <reference Id="658c0b5b-b4d9-4b0f-b8bc-9f2167d1130e" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Conta)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta Member=.ctor)&quot;)" tag="DGQL" />
+              <reference Id="d9a1c919-79ae-4407-8adb-12a2219acf90" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Conta Type=Conta Member=.ctor)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="74de25f8-b425-41c8-a9d4-24312a4aae1d" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="5433bbd2-a684-4c97-a5f3-b79ee25362f2" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="2a2f2df5-801a-4199-bd34-373e00e79fc7" name="Create EntidadeBase" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="true">
+            <referencesInternal>
+              <reference Id="00c81336-12ea-44c5-aaa8-7a1d307cd7e8" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Core)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=EntidadeBase)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=EntidadeBase Member=.ctor)&quot;)" tag="DGQL" />
+              <reference Id="75a98a53-08f6-4e7d-985e-8e6ae880df68" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Core Type=EntidadeBase Member=.ctor)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="10f84b08-d7ed-40be-bc39-c47d1860e046" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="50626582-129d-4be1-ad9b-7fd6775d8db0" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="1965ad8d-461f-4c96-a7a4-8d5793ae7774" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="01f2678e-0c68-4308-acb0-a6c1a08c82b6" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="8ca1864e-4edc-49b8-aa71-d16fc10079f1" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="407261d7-bf51-40f2-ba35-d067b8999068" name="IRepositorioBase‎&lt;Conta‎&gt;.Salvar" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="_repositorioContas.Salvar(conta)">
+            <referencesInternal>
+              <reference Id="a966eb78-dfa1-42f3-969d-4815c2cdfa4b" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Core)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=(Name=IRepositorioBase GenericParameterCount=1))&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=(Name=IRepositorioBase GenericParameterCount=1) Member=(Name=Salvar OverloadingParameters=[(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=(Name=IRepositorioBase GenericParameterCount=1) ParameterIdentifier=0)]))&quot;)" tag="DGQL" />
+              <reference Id="e8e213c5-c7cd-474e-ba2e-2aa59faf6238" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Core Type=(Name=IRepositorioBase GenericParameterCount=1) Member=(Name=Salvar OverloadingParameters=[(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Core Type=(Name=IRepositorioBase GenericParameterCount=1) ParameterIdentifier=0)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="c4eee96c-3116-4031-aef0-ab7c53d11df4" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="c4dd9117-881a-4f4b-99bf-001e373d1df4" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="b95251ab-d240-4279-b12a-140fd7211ca9" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="9cccb768-2d5f-4e72-b081-3672ae438e6a" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="d5c89582-026c-474b-8bf4-42f0d014314f" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="b25e7d77-24a8-442e-8f61-ffa75bdc6824" name="Commit" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="_unidadeDeTrabalho.Commit()">
+            <referencesInternal>
+              <reference Id="09c43bac-6278-4634-ad09-ba32e1e625ab" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=CardapioDigital.Dominio.Core)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=IUnidadeDeTrabalho)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&amp;quot; Namespace=CardapioDigital.Dominio.Core Type=IUnidadeDeTrabalho Member=Commit)&quot;)" tag="DGQL" />
+              <reference Id="e7012251-eb0d-41e0-ad7a-ffc5ef970c33" handle="(Assembly=&quot;$(ce8bf9b0-4d81-42bb-a5a9-6304c6c3f01d.OutputPathUri)&quot; Namespace=CardapioDigital.Dominio.Core Type=IUnidadeDeTrabalho Member=Commit)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="251d42e7-6e0d-45da-a365-678cb923f09c" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="7ae33145-3042-490e-a6f9-9f62433aafc7" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="5fa41bfa-2d91-4f0c-a58a-ca2e300f1db2" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="7ab375dd-c2d9-4b14-8a0d-8610b19db52e" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="2a87e0fd-d50d-4d18-94f6-7d1d06b87c7f" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="17809af0-577e-4a13-9aac-5db126fdaed2" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="3bcb164c-bf6e-40e4-807c-65df5e07c2b9" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="e96218e9-7af1-4be0-8b0c-1f177f4996d7" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="ce744c77-1c2e-41f9-9b78-112b9a6a8fef" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="89e57932-44f3-4ec3-97e0-d14ef0bb6d98" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="d5dbf737-7982-4881-9e2c-b2a0b75e601d" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="35451f15-f75a-4cd8-b09a-e88b17afc65a" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="1a055399-71c6-455a-b373-3ce8a0632bbe" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="2089de41-1d16-4c5c-874e-026a812692cf" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="52d534d5-fc7e-4d4b-bbe4-6156010a03dd" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="05e0335f-460c-496b-9f19-f40db0c4cbe1" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="d803153c-c321-402d-a529-59c2a8ea91e2" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="34bc54b9-a692-4b9b-89d9-9991cc6f9df6" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="46dd4f18-e1bc-4082-b2ca-6f7a6614d909" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="be5899e1-1e4a-4012-92b8-599515da74b2" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="a9d56b89-739c-42b7-b6e0-eedc4cc695d7" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="0b988a4c-f1d7-4d4b-9b56-fb0207c107dd" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>

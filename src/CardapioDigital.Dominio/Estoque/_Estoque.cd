@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="CardapioDigital.Dominio.Estoque.Categoria">
+    <Position X="2" Y="7.75" Width="2" />
+    <AssociationLine Name="Traducoes" Type="CardapioDigital.Dominio.Estoque.CategoriaTraducao">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.474" Y="1.521" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Subcategorias" Type="CardapioDigital.Dominio.Estoque.Subcategoria">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.123" Y="0.05" Height="0.182" Width="2.806" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABCAAAggCAAAAAAAAAABAAAAAAAAAAAAAAAAAIgAACA=</HashCode>
+      <FileName>Estoque\Categoria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Traducoes" />
+      <Property Name="Subcategorias" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.CategoriaTraducao">
+    <Position X="2" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\CategoriaTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Produto">
+    <Position X="11.25" Y="7.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="OpcoesProduto" Type="CardapioDigital.Dominio.Estoque.OpcaoProduto">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.566" Y="0.369" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Traducoes" Type="CardapioDigital.Dominio.Estoque.ProdutoTraducao">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.3" Y="0.37" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAwgAACAAAAACAABAAIAIAAAABABAACkAAiAACA=</HashCode>
+      <FileName>Estoque\Produto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OpcoesProduto" />
+      <Property Name="Traducoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.ProdutoTraducao">
+    <Position X="11.25" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\ProdutoTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Subcategoria">
+    <Position X="6.5" Y="7.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Opcoes" Type="CardapioDigital.Dominio.Estoque.OpcaoSubcategoria">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.477" Y="0.301" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Traducoes" Type="CardapioDigital.Dominio.Estoque.SubcategoriaTraducao">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.561" Y="1.316" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIIAggAAAAAAAgAAIBAAIAIAAAAAQAAAAgAAgBACA=</HashCode>
+      <FileName>Estoque\Subcategoria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Opcoes" />
+      <Property Name="Produtos" />
+      <Property Name="Traducoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.SubcategoriaTraducao">
+    <Position X="6.5" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\SubcategoriaTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Opcao">
+    <Position X="9" Y="2" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Traducoes" Type="CardapioDigital.Dominio.Estoque.OpcaoTraducao">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.019" Y="0.078" Height="0.182" Width="2.904" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAggAAAAAAAAAAABAAAAAAAAAAAAAAAAAAgAACA=</HashCode>
+      <FileName>Estoque\Opcao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Traducoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.OpcaoTraducao">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\OpcaoTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.OpcaoProduto">
+    <Position X="11.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Estoque\OpcaoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.OpcaoSubcategoria">
+    <Position X="6.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Estoque\OpcaoSubcategoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CardapioDigital.Dominio.Estoque.ICategorias" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Estoque\ICategorias.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CardapioDigital.Dominio.Core.IRepositorioBase&lt;T&gt;">
+    <Position X="2.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAAAAAAAACQAAAAAAAAAAAAAAAAAAQAIEAAAA=</HashCode>
+      <FileName>Core\IRepositorioBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CardapioDigital.Dominio.Estoque.IProdutos" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Estoque\IProdutos.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

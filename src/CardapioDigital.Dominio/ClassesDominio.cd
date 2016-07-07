@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CardapioDigital.Dominio.Conta.Conta" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAYAAAACAEJQAAgMAAAEAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Conta\Conta.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Situacao" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Parciais" />
+      <Property Name="Pedido" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Conta.ContaParcial" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Itens" Type="CardapioDigital.Dominio.Conta.ItemPedido" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="4.885" />
+        <Point X="6.25" Y="4.885" />
+        <Point X="6.25" Y="4.191" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.159" Y="0.078" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAGAAAAACAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Conta\ContaParcial.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Itens" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Conta.ItemPedido" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="SituacaoPreparo" Type="CardapioDigital.Dominio.Conta.SituacaoPreparo">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.042" Y="0.036" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAACAAAgAAAAAAAAAAAAAAAgAAAAAAE=</HashCode>
+      <FileName>Conta\ItemPedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SituacaoPreparo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OpcoesSelecionadas" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Core.Idioma.Idioma" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\Idioma\Idioma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.SubcategoriaTraducao" Collapsed="true">
+    <Position X="4.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\SubcategoriaTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Categoria" Collapsed="true">
+    <Position X="1.75" Y="9" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABCAAAggCAAAAAAAAAABAAAAAAAAAAAAAAAAAIgAACA=</HashCode>
+      <FileName>Estoque\Categoria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Traducoes" />
+      <Property Name="Subcategorias" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.CategoriaTraducao" Collapsed="true">
+    <Position X="1.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\CategoriaTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Opcao" Collapsed="true">
+    <Position X="5.75" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAggAAAAAAAAAAABAAAAAAAAAAAAAAAAAAgAACA=</HashCode>
+      <FileName>Estoque\Opcao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Traducoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.OpcaoProduto" Collapsed="true">
+    <Position X="7" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Estoque\OpcaoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.OpcaoSubcategoria" Collapsed="true">
+    <Position X="4.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Estoque\OpcaoSubcategoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.OpcaoTraducao" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\OpcaoTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Produto" Collapsed="true">
+    <Position X="7" Y="9" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Traducoes" Type="CardapioDigital.Dominio.Estoque.ProdutoTraducao">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.934" Y="0.552" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAwgAACAAAAACAABAAIAIAAAABABAACkAAiAACA=</HashCode>
+      <FileName>Estoque\Produto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OpcoesProduto" />
+      <Property Name="Traducoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.ProdutoTraducao" Collapsed="true">
+    <Position X="7" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Estoque\ProdutoTraducao.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Estoque.Subcategoria" Collapsed="true">
+    <Position X="4.75" Y="9" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Traducoes" Type="CardapioDigital.Dominio.Estoque.SubcategoriaTraducao">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.976" Y="0.502" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIIAggAAAAAAAgAAIBAAIAIAAAAAQAAAAgAAgBACA=</HashCode>
+      <FileName>Estoque\Subcategoria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Opcoes" />
+      <Property Name="Produtos" />
+      <Property Name="Traducoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="CardapioDigital.Dominio.Conta.FormaPagamento" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Conta\FormaPagamento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardapioDigital.Dominio.Conta.SituacaoConta" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conta\SituacaoConta.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardapioDigital.Dominio.Conta.SituacaoPreparo" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAgAAAAAAAAEAAAAAAEAAA=</HashCode>
+      <FileName>Conta\SituacaoPreparo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardapioDigital.Dominio.Conta.TipoDivisaoConta" Collapsed="true">
+    <Position X="8.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Conta\TipoDivisaoConta.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

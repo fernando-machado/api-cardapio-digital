@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE8BF9B0-4D81-42BB-A5A9-6304C6C3F01D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CardapioDigital.Dominio</RootNamespace>
+    <AssemblyName>CardapioDigital.Dominio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\Dev\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Atendimento\Avaliacao.cs" />
+    <Compile Include="Atendimento\Exceptions\AvaliacaoDuplicadaException.cs" />
+    <Compile Include="Atendimento\Exceptions\AvaliacaoNaoEncontradaException.cs" />
+    <Compile Include="Atendimento\Exceptions\SolicitacaoNaoEncontradaException.cs" />
+    <Compile Include="Atendimento\IRepositorioAvaliacoes.cs" />
+    <Compile Include="Atendimento\IRepositorioSolicitacoes.cs" />
+    <Compile Include="Atendimento\Solicitacao.cs" />
+    <Compile Include="Atendimento\TipoSolicitacao.cs" />
+    <Compile Include="Conta\Conta.cs" />
+    <Compile Include="Conta\Exceptions\ContaParcialNaoEncontradaException.cs" />
+    <Compile Include="Conta\Exceptions\FechamentoDeContaNaoPermitidoException.cs" />
+    <Compile Include="Conta\Exceptions\ItemPedidoNaoEncontradoException.cs" />
+    <Compile Include="Conta\ItemPedido.cs" />
+    <Compile Include="Conta\Exceptions\ContaNaoEncontradaException.cs" />
+    <Compile Include="Conta\Exceptions\SituacaoPreparoException.cs" />
+    <Compile Include="Conta\IRepositorioDeContas.cs" />
+    <Compile Include="Conta\SituacaoConta.cs" />
+    <Compile Include="Conta\SituacaoPreparo.cs" />
+    <Compile Include="Conta\TipoDivisaoConta.cs" />
+    <Compile Include="Core\EntidadeBase.cs" />
+    <Compile Include="Core\Idioma\Idioma.cs" />
+    <Compile Include="Core\Idioma\IdiomaExistenteException.cs" />
+    <Compile Include="Core\Idioma\IRepositorioIdiomas.cs" />
+    <Compile Include="Core\Idioma\ITraducao.cs" />
+    <Compile Include="Core\IRepositorioBase.cs" />
+    <Compile Include="Core\IUnidadeDeTrabalho.cs" />
+    <Compile Include="Conta\FormaPagamento.cs" />
+    <Compile Include="Conta\ContaParcial.cs" />
+    <Compile Include="Estoque\Categoria.cs" />
+    <Compile Include="Estoque\CategoriaTraducao.cs" />
+    <Compile Include="Estoque\Exceptions\ProdutoNaoEncontradoException.cs" />
+    <Compile Include="Estoque\IRepositorioDeOpcoes.cs" />
+    <Compile Include="Estoque\OpcaoProduto.cs" />
+    <Compile Include="Estoque\Opcao.cs" />
+    <Compile Include="Estoque\OpcaoSubcategoria.cs" />
+    <Compile Include="Estoque\OpcaoTraducao.cs" />
+    <Compile Include="Estoque\SubcategoriaTraducao.cs" />
+    <Compile Include="Estoque\Subcategoria.cs" />
+    <Compile Include="Estoque\ICategorias.cs" />
+    <Compile Include="Estoque\IProdutos.cs" />
+    <Compile Include="Estoque\Produto.cs" />
+    <Compile Include="Estoque\ProdutoTraducao.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClasseGeral.cd" />
+    <None Include="Conta\_ContaSemRelacionamentos.cd" />
+    <None Include="Conta\_Conta.cd" />
+    <None Include="ClassesDominio.cd" />
+    <None Include="Core\EntidadeBaseDerivadas.cd" />
+    <None Include="Estoque\_Estoque.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

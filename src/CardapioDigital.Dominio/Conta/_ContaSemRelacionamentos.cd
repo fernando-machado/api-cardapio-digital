@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CardapioDigital.Dominio.Conta.ContaParcial">
+    <Position X="3.25" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAEAAAAACAAAAAkAAAAAAAAAIAQAAAAAA=</HashCode>
+      <FileName>Conta\ContaParcial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Conta.Conta">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAYAAAAAAEIAAAgMAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conta\Conta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardapioDigital.Dominio.Conta.ItemPedido">
+    <Position X="3.25" Y="3.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Conta\ItemPedido.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CardapioDigital.Dominio.Conta.FormaPagamento">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Conta\FormaPagamento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardapioDigital.Dominio.Conta.SituacaoPreparo">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAgAAAAAAAAEAAAAAAEAAA=</HashCode>
+      <FileName>Conta\SituacaoPreparo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardapioDigital.Dominio.Conta.SituacaoConta">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conta\SituacaoConta.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,15 @@
+Reajustar as rotas (tb implementar versionamento)
+
+Refatorar as viewModels
+
+Fazer o tratamento de responses corretamente.
+
+Ajustar as consultas no NHibernate (talvez refatorar os repositórios).
+
+Implementar segurança. (OAuth)
+
+Implementar paginação e HATEOAS (links).
+
+
+
+
