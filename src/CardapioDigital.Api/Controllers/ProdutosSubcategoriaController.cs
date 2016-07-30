@@ -1,51 +1,33 @@
-﻿//using CardapioDigital.Aplicacao.DTO;
-//using CardapioDigital.Aplicacao.Servicos;
-//using System.Collections.Generic;
-//using System.Web.Http;
+﻿using CardapioDigital.Aplicacao.Servicos;
+using System.Web.Http;
 
-//namespace CardapioDigital.Api.Controllers
-//{
-//    public class ProdutosSubcategoriaController : ApiController
-//    {
-//        private readonly GerenciamentoEstoque _gerenciamentoEstoque;
+namespace CardapioDigital.Api.Controllers
+{
+    public class ProdutosSubcategoriaController : ApiController
+    {
+        private readonly GerenciamentoEstoque _gerenciamentoEstoque;
 
-//        public ProdutosSubcategoriaController(GerenciamentoEstoque gerenciamentoEstoque)
-//        {
-//            _gerenciamentoEstoque = gerenciamentoEstoque;
-//        }
+        public ProdutosSubcategoriaController(GerenciamentoEstoque gerenciamentoEstoque)
+        {
+            _gerenciamentoEstoque = gerenciamentoEstoque;
+        }
 
-//        // GET api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-//        public IHttpActionResult Get(int idCategoria, int idSubcategoria)
-//        {
-//            var produtos  = _gerenciamentoEstoque.ObterProdutosDaSubcategoria(idSubcategoria);
-            
-//            return Ok(produtos);
-//        }
+        // GET api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
+        public IHttpActionResult Get(int idCategoria, int idSubcategoria)
+        {
+            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria: 0, idSubcategoria: idSubcategoria);
 
-//        // GET api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-//        public IHttpActionResult Get(int idCategoria, int idSubcategoria, int idProduto)
-//        {
-//            var produto = _gerenciamentoEstoque.ObterProdutoPorId(idProduto);
-//            if (produto == null)
-//                return NotFound();
+            return Ok(produtos);
+        }
 
-//            return Ok(produto);
-//        }
+        // GET api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
+        public IHttpActionResult Get(int idCategoria, int idSubcategoria, int idProduto)
+        {
+            var produto = _gerenciamentoEstoque.ObterProdutoPorId(idProduto);
+            if (produto == null)
+                return NotFound();
 
-//        //// POST api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-//        //public void Post(int idCategoria, int idSubcategoria, [FromBody]ProdutoDto novoProduto)
-//        //{
-
-//        //}
-
-//        //// PUT api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-//        //public void Put(int idCategoria, int idSubcategoria, int idProduto, [FromBody]ProdutoDto produto)
-//        //{
-//        //}
-
-//        //// DELETE api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-//        //public void Delete(int idCategoria, int idSubcategoria, int idProduto)
-//        //{
-//        //}
-//    }
-//}
+            return Ok(produto);
+        }
+    }
+}

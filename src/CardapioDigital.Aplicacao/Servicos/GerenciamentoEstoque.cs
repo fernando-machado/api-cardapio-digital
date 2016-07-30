@@ -43,7 +43,15 @@ namespace CardapioDigital.Aplicacao.Servicos
             return produtos.Select(MapeamentoDtoHelper.MapProdutoSimplesParaDto).ToList();
         }
 
-        public IEnumerable<ProdutoDto> ObterProdutosDaCategoria(int codigoCategoria)
+        public IEnumerable<ProdutoDto> ObterProdutos(int idCategoria, int idSubcategoria)
+        {
+            if (idSubcategoria > 0)
+                return ObterProdutosDaSubcategoria(idSubcategoria);
+
+            return ObterProdutosDaCategoria(idCategoria);
+        }
+
+        private IEnumerable<ProdutoDto> ObterProdutosDaCategoria(int codigoCategoria)
         {
             var categoria = _categorias.ObterPorId(codigoCategoria);
             var produtos = categoria.Subcategorias.SelectMany(p => p.Produtos).ToList();
@@ -51,7 +59,7 @@ namespace CardapioDigital.Aplicacao.Servicos
             return produtos.ToList().Select(MapeamentoDtoHelper.MapProdutoCompletoParaDto).ToList();
         }
 
-        public IEnumerable<ProdutoDto> ObterProdutosDaSubcategoria(int codigoSubcategoria)
+        private IEnumerable<ProdutoDto> ObterProdutosDaSubcategoria(int codigoSubcategoria)
         {
             var produtos = _produtos.ObterTodosOnde(p => p.Subcategoria.Codigo == codigoSubcategoria).ToList();
 

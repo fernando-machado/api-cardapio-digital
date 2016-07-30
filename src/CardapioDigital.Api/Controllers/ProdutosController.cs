@@ -1,29 +1,62 @@
 ﻿using CardapioDigital.Aplicacao.DTO;
 using CardapioDigital.Aplicacao.Servicos;
+using System.Collections.Generic;
 using System.Web.Http;
-using CardapioDigital.Api.ActionResults;
+using System.Web.Http.Description;
 
 namespace CardapioDigital.Api.Controllers
 {
+    /// <summary>
+    /// Produtos Controller
+    /// </summary>
+    [RoutePrefix("api/v1/produtos")]
     public class ProdutosController : ApiController
     {
         private readonly GerenciamentoEstoque _gerenciamentoEstoque;
 
+        /// <summary>
+        /// Initialize instance of <see cref="ProdutosController"/>
+        /// </summary>
+        /// <param name="gerenciamentoEstoque">Repositório de gerenciamento de estoque</param>
         public ProdutosController(GerenciamentoEstoque gerenciamentoEstoque)
         {
             _gerenciamentoEstoque = gerenciamentoEstoque;
         }
 
-        // GET api/produtos/{idProduto}
-        public IHttpActionResult Get()
+        /// <summary>
+        /// Obter todos os produtos
+        /// </summary>
+        /// <remarks>
+        /// Obtém todos os produtos cadastrados
+        /// </remarks>
+        /// <response code="200">OK</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns>Lista de <list type="IEnumerable"><see cref="ProdutoDto"/></list></returns>
+        [HttpGet, Route("")]
+        [ResponseType(typeof(IEnumerable<ProdutoDto>))]
+        public IHttpActionResult ObterTodosProdutos()
         {
             var produtos = _gerenciamentoEstoque.ObterTodosProdutos();
-            
+
             return Ok(produtos);
         }
 
-        // GET api/produtos/{idProduto}
-        public IHttpActionResult Get(int idProduto)
+        /// <summary>
+        /// Obter produto por id
+        /// </summary>
+        /// <remarks>
+        /// Obtém as informações do produto solicitado
+        /// </remarks>
+        /// <param name="idProduto">id do produto</param>
+        /// <response code="200">Ok</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="404">NotFound</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns>Retorna um produto (<see cref="ProdutoDto"/>)</returns>
+        [HttpGet, Route("{idProduto:int}", Name = "ObterProdutoPorId")]
+        [ResponseType(typeof(ProdutoDto))]
+        public IHttpActionResult ObterProdutoPorId(int idProduto)
         {
             var produtoDto = _gerenciamentoEstoque.ObterProdutoPorId(idProduto);
 
@@ -33,37 +66,106 @@ namespace CardapioDigital.Api.Controllers
             return Ok(produtoDto);
         }
 
-
-        public IHttpActionResult GetProdutosCategoria(int idCategoria)
+        /// <summary>
+        /// Obter produtos por categoria
+        /// </summary>
+        /// <remarks>
+        /// Obtém os produtos da categoria solicitada
+        /// </remarks>
+        /// <param name="idCategoria">id da categoria</param>
+        /// <response code="200">Ok</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns>Lista de <see cref="ProdutoDto"/></returns>
+        [HttpGet, Route("categoria/{idCategoria:int}")]
+        [ResponseType(typeof(IEnumerable<ProdutoDto>))]
+        public IHttpActionResult ObterProdutosPorCategoria(int idCategoria)
         {
-            var produtos = _gerenciamentoEstoque.ObterProdutosDaCategoria(idCategoria);
+            //TODO: Refatorar ObterProdutos
+            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria: idCategoria, idSubcategoria: 0);
 
             return Ok(produtos);
         }
 
+        /// <summary>
+        /// Obter produtos por subcategoria
+        /// </summary>
+        /// <remarks>
+        /// Obtém os produtos da subcategoria solicitada
+        /// </remarks>
+        /// <param name="idSubcategoria">id da subcategoria</param>
+        /// <response code="200">Ok</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns>Lista de <see cref="ProdutoDto"/></returns>
+        [HttpGet, Route("subcategoria/{idSubcategoria:int}")]
+        [ResponseType(typeof(IEnumerable<ProdutoDto>))]
+        public IHttpActionResult ObterProdutosPorSubcategoria(int idSubcategoria)
+        {
+            //TODO: Refatorar ObterProdutos
+            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria: 0, idSubcategoria: idSubcategoria);
+
+            return Ok(produtos);
+        }
+
+        /// <summary>
+        /// Cria um novo produto
+        /// </summary>
+        /// <param name="novoProduto">Informações do produto</param>
+        /// <response code="201">Created</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns>Produto criado (<see cref="ProdutoDto"/>)</returns>
+        [HttpPost, Route("")]
+        [ResponseType(typeof(ProdutoDto))]
+        public IHttpActionResult CriarProduto([FromBody]ProdutoDto novoProduto)
+        {
+            var produtoCriado = new { Id = 999, Nome = "Implementar" };
+
+            return CreatedAtRoute("ObterProdutoPorId", new { id = 999 }, produtoCriado);
+
+            return new CardapioDigital.Api.ActionResults.CreatedContentActionResult(Request, Url.Link("Produtos", new { idProduto = 999 }));
+        }
+
+        /// <summary>
+        /// Altera um produto existente
+        /// </summary>
+        /// <param name="idProduto">Id do produto</param>
+        /// <param name="produto">Informações do produto para serem alteradas</param>
+        /// <response code="200">Ok</response>
+        /// <response code="404">NotFound</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns>Produto atualizado (<see cref="ProdutoDto"/>)</returns>
+        [HttpPut, Route("{idProduto:int}")]
+        [ResponseType(typeof(ProdutoDto))]
+        public IHttpActionResult AlterarProduto(int idProduto, [FromBody]ProdutoDto produto)
+        {
+            var produtoExistente = _gerenciamentoEstoque.ObterProdutoPorId(idProduto);
+
+            if (produtoExistente == null)
+                return NotFound();
+
+            produtoExistente.Descricao = produto.Descricao;
+            
+            //TODO: Atualiza as informações no BD
+
+
+            return Ok(produtoExistente);
+        }
         
-        public IHttpActionResult GetProdutosSubcategoria(int idSubcategoria)
+        /// <summary>
+        /// Exclui um produto
+        /// </summary>
+        /// <param name="idProduto">Id do produto</param>
+        /// <response code="200">Ok</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        /// <returns></returns>
+        [HttpDelete, Route("{idProduto:int}")]
+        public IHttpActionResult DeletarProduto(int idProduto)
         {
-            var produtos = _gerenciamentoEstoque.ObterProdutosDaSubcategoria(idSubcategoria);
-
-            return Ok(produtos);
+            return Ok();
         }
-
-
-        // POST api/produtos
-        public IHttpActionResult Post([FromBody]ProdutoDto novoProduto)
-        {
-            return new CreatedContentActionResult(Request, Url.Link("Produtos", new { idProduto = 999 }));
-        }
-
-        //// PUT api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-        //public void Put(int idCategoria, int idSubcategoria, int idProduto, [FromBody]ProdutoDto produto)
-        //{
-        //}
-
-        //// DELETE api/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos/{idProduto}
-        //public void Delete(int idCategoria, int idSubcategoria, int idProduto)
-        //{
-        //}
     }
 }
