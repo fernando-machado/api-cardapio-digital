@@ -9,7 +9,6 @@ namespace CardapioDigital.Api.Controllers
     /// <summary>
     /// Contas Controller
     /// </summary>
-    [RoutePrefix()]
     public class ContasController : ApiController
     {
         private readonly GerenciamentoConta _gerenciamentoConta;

@@ -8,9 +8,9 @@ namespace CardapioDigital.Infra.ModulosInjecaoDependencia
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<GerenciamentoEstoque>().InstancePerApiRequest();
-            builder.RegisterType<GerenciamentoConta>().InstancePerApiRequest();
-            builder.RegisterType<GerenciamentoAtendimento>().InstancePerApiRequest();
+            builder.RegisterType<GerenciamentoEstoque>().InstancePerRequest();
+            builder.RegisterType<GerenciamentoConta>().InstancePerRequest();
+            builder.RegisterType<GerenciamentoAtendimento>().InstancePerRequest();
         }
     }
 }

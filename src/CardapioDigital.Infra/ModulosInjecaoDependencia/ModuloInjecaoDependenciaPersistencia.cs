@@ -14,15 +14,15 @@ namespace CardapioDigital.Infra.ModulosInjecaoDependencia
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UnidadeDeTrabalho>().As<IUnidadeDeTrabalho>().InstancePerApiRequest();
+            builder.RegisterType<UnidadeDeTrabalho>().As<IUnidadeDeTrabalho>().InstancePerRequest();
 
-            builder.RegisterType<Produtos>().As<IProdutos>().InstancePerApiRequest();
-            builder.RegisterType<Categorias>().As<ICategorias>().InstancePerApiRequest();
-            builder.RegisterType<RepositorioIdiomas>().As<IRepositorioIdiomas>().InstancePerApiRequest();
-            builder.RegisterType<RepositorioDeContas>().As<IRepositorioDeContas>().InstancePerApiRequest();
-            builder.RegisterType<RepositorioDeOpcoes>().As<IRepositorioDeOpcoes>().InstancePerApiRequest();
-            builder.RegisterType<RepositorioSolicitacoes>().As<IRepositorioSolicitacoes>().InstancePerApiRequest();
-            builder.RegisterType<RepositorioAvaliacoes>().As<IRepositorioAvaliacoes>().InstancePerApiRequest();
+            builder.RegisterType<Produtos>().As<IProdutos>().InstancePerRequest();
+            builder.RegisterType<Categorias>().As<ICategorias>().InstancePerRequest();
+            builder.RegisterType<RepositorioIdiomas>().As<IRepositorioIdiomas>().InstancePerRequest();
+            builder.RegisterType<RepositorioDeContas>().As<IRepositorioDeContas>().InstancePerRequest();
+            builder.RegisterType<RepositorioDeOpcoes>().As<IRepositorioDeOpcoes>().InstancePerRequest();
+            builder.RegisterType<RepositorioSolicitacoes>().As<IRepositorioSolicitacoes>().InstancePerRequest();
+            builder.RegisterType<RepositorioAvaliacoes>().As<IRepositorioAvaliacoes>().InstancePerRequest();
         }
     }
 }
