@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using log4net;
 
-namespace CardapioDigital.Api.Handlers
+namespace CardapioDigital.Api.CustomHandlers
 {
     /// <summary>
     /// Logging Handler

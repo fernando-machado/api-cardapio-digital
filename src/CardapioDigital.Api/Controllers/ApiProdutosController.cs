@@ -32,7 +32,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">OK</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Lista de <list type="IEnumerable"><see cref="ProdutoDto"/></list></returns>
         [HttpGet, Route("")]
         [ResponseType(typeof(IEnumerable<ProdutoDto>))]
         public IHttpActionResult ObterTodosProdutos()
@@ -53,7 +52,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="401">Unauthorized</response>
         /// <response code="404">NotFound</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Retorna um produto (<see cref="ProdutoDto"/>)</returns>
         [HttpGet, Route("{idProduto:int}", Name = "ObterProdutoPorId")]
         [ResponseType(typeof(ProdutoDto))]
         public IHttpActionResult ObterProdutoPorId(int idProduto)
@@ -76,7 +74,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Lista de <see cref="ProdutoDto"/></returns>
         [HttpGet, Route("categoria/{idCategoria:int}")]
         [ResponseType(typeof(IEnumerable<ProdutoDto>))]
         public IHttpActionResult ObterProdutosPorCategoria(int idCategoria)
@@ -97,7 +94,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Lista de <see cref="ProdutoDto"/></returns>
         [HttpGet, Route("subcategoria/{idSubcategoria:int}")]
         [ResponseType(typeof(IEnumerable<ProdutoDto>))]
         public IHttpActionResult ObterProdutosPorSubcategoria(int idSubcategoria)
@@ -115,7 +111,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="201">Created</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Produto criado (<see cref="ProdutoDto"/>)</returns>
         [HttpPost, Route("")]
         [ResponseType(typeof(ProdutoDto))]
         public IHttpActionResult CriarProduto([FromBody]ProdutoDto novoProduto)
@@ -136,7 +131,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="404">NotFound</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Produto atualizado (<see cref="ProdutoDto"/>)</returns>
         [HttpPut, Route("{idProduto:int}")]
         [ResponseType(typeof(ProdutoDto))]
         public IHttpActionResult AlterarProduto(int idProduto, [FromBody]ProdutoDto produto)
@@ -147,13 +141,13 @@ namespace CardapioDigital.Api.Controllers
                 return NotFound();
 
             produtoExistente.Descricao = produto.Descricao;
-            
+
             //TODO: Atualiza as informações no BD
 
 
             return Ok(produtoExistente);
         }
-        
+
         /// <summary>
         /// Exclui um produto
         /// </summary>
@@ -161,9 +155,8 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns></returns>
         [HttpDelete, Route("{idProduto:int}")]
-        public IHttpActionResult DeletarProduto(int idProduto)
+        public IHttpActionResult ExcluirProduto(int idProduto)
         {
             return Ok();
         }

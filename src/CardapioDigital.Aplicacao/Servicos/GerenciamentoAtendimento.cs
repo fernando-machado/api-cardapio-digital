@@ -4,6 +4,7 @@ using System.Linq;
 using CardapioDigital.Aplicacao.DTO;
 using CardapioDigital.Dominio.Atendimento;
 using CardapioDigital.Dominio.Atendimento.Exceptions;
+using CardapioDigital.Dominio.Conta;
 using CardapioDigital.Dominio.Core;
 
 namespace CardapioDigital.Aplicacao.Servicos
@@ -28,7 +29,7 @@ namespace CardapioDigital.Aplicacao.Servicos
             return avaliacoes.ToList().Select(MapeamentoDtoHelper.MapAvaliacaoCompletaParaDto);
         }
 
-        public AvaliacaoCompletaDto ObterAvaliacao(int codigoAvaliacao)
+        public AvaliacaoCompletaDto ObterAvaliacaoPorId(int codigoAvaliacao)
         {
             var avaliacao = _repositorioAvaliacoes.ObterPorId(codigoAvaliacao);
             if (avaliacao == null)
@@ -37,8 +38,25 @@ namespace CardapioDigital.Aplicacao.Servicos
             return MapeamentoDtoHelper.MapAvaliacaoCompletaParaDto(avaliacao);
         }
 
+        public IEnumerable<AvaliacaoCompletaDto> ObterAvaliacoesPorData(DateTime data)
+        {
+            var avaliacoes = _repositorioAvaliacoes.ObterTodosOnde(av => av.Conta.DataCriacao.Date == data.Date);
+
+            return avaliacoes.Select(MapeamentoDtoHelper.MapAvaliacaoCompletaParaDto);
+        }
+
+
+
         public IEnumerable<SolicitacaoDto> ObterTodasSolicitacoes()
         {
+            var solicitacoes = _repositorioSolicitacoes.ObterTodos();
+
+            return solicitacoes.Select(MapeamentoDtoHelper.MapSolicitacaoCompletaParaDto);
+        }
+
+        public IEnumerable<SolicitacaoDto> ObterTodasSolicitacoesPendentes()
+        {
+            //TODO: Implementar Status das solicitações (Pendente | Atendida | Cancelada)
             var solicitacoes = _repositorioSolicitacoes.ObterTodos();
 
             return solicitacoes.Select(MapeamentoDtoHelper.MapSolicitacaoCompletaParaDto);
@@ -51,7 +69,15 @@ namespace CardapioDigital.Aplicacao.Servicos
             return solicitacoesDaConta.Select(MapeamentoDtoHelper.MapSolicitacaoCompletaParaDto);
         }
 
-        public SolicitacaoDto ObterSolicitacao(int codigoSolicitacao)
+        public IEnumerable<SolicitacaoDto> ObterSolicitacoesPendentesDaConta(int codigoConta)
+        {
+            //TODO: Implementar Status das solicitações (Pendente | Atendida | Cancelada)
+            var solicitacoesDaConta = _repositorioSolicitacoes.ObterTodosOnde(s => s.Conta.Codigo == codigoConta && s.Conta.Situacao == SituacaoConta.Aberta);
+
+            return solicitacoesDaConta.Select(MapeamentoDtoHelper.MapSolicitacaoCompletaParaDto);
+        }
+
+        public SolicitacaoDto ObterSolicitacaoPorId(int codigoSolicitacao)
         {
             var solicitacao = _repositorioSolicitacoes.ObterPorId(codigoSolicitacao);
             if (solicitacao == null)

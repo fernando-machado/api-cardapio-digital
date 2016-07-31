@@ -36,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\CardapioDigital.Api.xml</DocumentationFile>
+    <DocumentationFile>bin\CardapioDigitalApi.Docs.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -148,8 +148,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\ApiKeyHandler.cs" />
-    <Compile Include="Handlers\GlobalExceptionHandler.cs" />
+    <Compile Include="CustomHandlers\ApiKeyHandler.cs" />
+    <Compile Include="CustomHandlers\GlobalExceptionHandler.cs" />
     <Compile Include="ActionResults\CreatedContentActionResult.cs" />
     <Compile Include="ActionResults\HtmlActionResult.cs" />
     <Compile Include="ActionResults\NotFoundPlainTextActionResult.cs" />
@@ -189,19 +189,18 @@
     <Compile Include="Controllers\ApiCategoriasController.cs" />
     <Compile Include="Controllers\ApiContasController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\ApiProdutosController.cs" />
     <Compile Include="Controllers\ApiSubcategoriasController.cs" />
     <Compile Include="Controllers\ApiParciaisController.cs" />
     <Compile Include="Controllers\ApiItensParcialController.cs" />
     <Compile Include="Controllers\ApiAvaliacoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProdutosSubcategoriaController.cs" />
     <Compile Include="Controllers\ApiPedidosController.cs" />
     <Compile Include="Controllers\ApiSolicitacoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\RequestsLoggingHandler.cs" />
+    <Compile Include="CustomHandlers\RequestsLoggingHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -346,6 +345,10 @@
     <ProjectReference Include="..\CardapioDigital.Aplicacao\CardapioDigital.Aplicacao.csproj">
       <Project>{4FFB643F-49F5-4A3F-B2C1-AAD36DA0960A}</Project>
       <Name>CardapioDigital.Aplicacao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardapioDigital.Dominio\CardapioDigital.Dominio.csproj">
+      <Project>{CE8BF9B0-4D81-42BB-A5A9-6304C6C3F01D}</Project>
+      <Name>CardapioDigital.Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\CardapioDigital.Infra\CardapioDigital.Infra.csproj">
       <Project>{2A6EA60C-B08E-4848-A414-445D20764D46}</Project>

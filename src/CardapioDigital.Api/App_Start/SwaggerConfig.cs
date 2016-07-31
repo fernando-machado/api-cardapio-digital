@@ -1,17 +1,21 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using Swashbuckle.Swagger;
-using WebActivatorEx;
 using CardapioDigital.Api;
 using Swashbuckle.Application;
+using Swashbuckle.Swagger;
+using System.Linq;
+using System.Web.Http;
 
-[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace CardapioDigital.Api
 {
+    /// <summary>
+    /// Swagger Config
+    /// </summary>
     public class SwaggerConfig
     {
+        /// <summary>
+        /// Register Swagger Configs
+        /// </summary>
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
@@ -35,7 +39,7 @@ namespace CardapioDigital.Api
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "Api utilizada pelo aplicativo Cardapio Digital");
+                        c.SingleApiVersion("v1", "API utilizada pelo aplicativo Cardapio Digital");
 
                         // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
                         // In this case, you must provide a lambda that tells Swashbuckle which actions should be
@@ -99,8 +103,8 @@ namespace CardapioDigital.Api
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        c.IncludeXmlComments(string.Format(@"{0}\bin\CardapioDigital.Api.xml", System.AppDomain.CurrentDomain.BaseDirectory));
-
+                        c.IncludeXmlComments(string.Concat(System.AppDomain.CurrentDomain.BaseDirectory, @"bin\CardapioDigitalApi.Docs.xml"));
+            
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
                         // This is supported through the "MapType" and "SchemaFilter" options:

@@ -126,7 +126,6 @@ namespace CardapioDigital.Aplicacao.Servicos
 
 
 
-
         public ContaDto CriarConta(int numeroMesa)
         {
             var conta = new Conta(numeroMesa);
@@ -203,7 +202,7 @@ namespace CardapioDigital.Aplicacao.Servicos
             _unidadeDeTrabalho.Commit();
         }
 
-        public void SalvarAvaliacaoAtendimento(int codigoConta, NovaAvaliacaoDto avaliacaoConta)
+        public Avaliacao SalvarAvaliacaoAtendimento(int codigoConta, NovaAvaliacaoDto avaliacaoConta)
         {
             var conta = ObterContaInterno(codigoConta);
 
@@ -216,6 +215,8 @@ namespace CardapioDigital.Aplicacao.Servicos
         
             _repositorioContas.Salvar(conta);
             _unidadeDeTrabalho.Commit();
+
+            return conta.Avaliacao;
         }
 
         public SolicitacaoDto AdicionarSolicitacao(int codigoConta, NovaSolicitacaoDto novaSolicitacao)

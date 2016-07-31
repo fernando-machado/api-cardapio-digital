@@ -4,7 +4,7 @@
 //using System.Threading;
 //using System.Threading.Tasks;
 
-//namespace CardapioDigital.Api.Handlers
+//namespace CardapioDigital.Api.CustomHandlers
 //{
 //    /// <summary>
 //    /// ApiKey Handler

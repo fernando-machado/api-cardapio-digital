@@ -32,7 +32,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">OK</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Lista de <list type="IEnumerable"><see cref="CategoriaDto"/></list></returns>
         [HttpGet, Route("")]
         [ResponseType(typeof(IEnumerable<CategoriaDto>))]
         public IHttpActionResult ObterTodasCategorias()
@@ -51,7 +50,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="401">Unauthorized</response>
         /// <response code="404">NotFound</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Retorna uma categoria (<see cref="CategoriaDto"/>)</returns>
         [HttpGet, Route("{idCategoria:int}", Name = "ObterCategoriaPorId")]
         [ResponseType(typeof(CategoriaDto))]
         public IHttpActionResult ObterCategoriaPorId(int idCategoria)
@@ -65,13 +63,32 @@ namespace CardapioDigital.Api.Controllers
         }
 
         /// <summary>
+        /// Obter produtos por categoria
+        /// </summary>
+        /// <remarks>
+        /// Obtém os produtos da categoria solicitada
+        /// </remarks>
+        /// <param name="idCategoria">id da categoria</param>
+        /// <response code="200">Ok</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        [HttpGet, Route("{idCategoria:int}/produtos")]
+        [ResponseType(typeof(IEnumerable<ProdutoDto>))]
+        public IHttpActionResult ObterProdutosPorCategoria(int idCategoria)
+        {
+            //TODO: Refatorar ObterProdutos
+            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria: idCategoria, idSubcategoria: 0);
+
+            return Ok(produtos);
+        }
+
+        /// <summary>
         /// Cria uma nova categoria
         /// </summary>
         /// <param name="novaCategoria">Informações da categoria</param>
         /// <response code="201">Created</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Categoria criada (<see cref="CategoriaDto"/>)</returns>
         [HttpPost, Route("")]
         [ResponseType(typeof(CategoriaDto))]
         public IHttpActionResult CriarCategoria([FromBody]CategoriaDto novaCategoria)
@@ -93,7 +110,6 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="404">NotFound</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns>Categoria atualizada (<see cref="CategoriaDto"/>)</returns>
         [HttpPut, Route("{idCategoria:int}")]
         [ResponseType(typeof(CategoriaDto))]
         public IHttpActionResult AlterarCategoria(int idCategoria, [FromBody]CategoriaDto categoriaParaAtualizar)
@@ -118,9 +134,8 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        /// <returns></returns>
         [HttpDelete, Route("{idCategoria:int}")]
-        public IHttpActionResult DeletarCategoria(int idCategoria)
+        public IHttpActionResult ExcluirCategoria(int idCategoria)
         {
             //_gerenciamentoEstoque.PrepararBancoDeDados();
             return Ok();

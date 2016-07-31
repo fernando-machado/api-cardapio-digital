@@ -50,6 +50,7 @@
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="DTO\AtendimentoDtos.cs" />
     <Compile Include="DTO\ContaDtos.cs" />
+    <Compile Include="DTO\Core\ExcecaoDeNegocio.cs" />
     <Compile Include="DTO\EstoqueDtos.cs" />
     <Compile Include="DTO\Core\DadosComPaginacao.cs" />
     <Compile Include="DTO\Core\Paginacao.cs" />

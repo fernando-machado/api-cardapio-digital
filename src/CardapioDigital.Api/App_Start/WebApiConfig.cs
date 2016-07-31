@@ -1,11 +1,12 @@
-﻿using System.Web.Http.ExceptionHandling;
-using CardapioDigital.Api.Handlers;
+﻿using CardapioDigital.Api.Areas.HelpPage;
+using CardapioDigital.Api.CustomHandlers;
 using CardapioDigital.Infra;
+using Elmah.Contrib.WebApi;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Reflection;
 using System.Web.Http;
-using Elmah.Contrib.WebApi;
+using System.Web.Http.ExceptionHandling;
 
 namespace CardapioDigital.Api
 {
@@ -37,6 +38,17 @@ namespace CardapioDigital.Api
             // For more information, visit http://go.microsoft.com/fwlink/?LinkId=279712.
             //config.EnableQuerySupport();
 
+            // Install-Package Microsoft.AspNet.OData -Version 5.3.0 
+            // Install-Package Microsoft.AspNet.WebApi.OData -Version 5.3.0
+            // config.EnableQuerySupport(new QueryableAttribute());
+
+            //config.EnableCors();
+            //config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+            //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
+
+            config.SetDocumentationProvider(new XmlDocumentationProvider(System.Web.HttpContext.Current.Server.MapPath(@"~/bin/CardapioDigitalApi.Docs.xml")));
+            
             // Web API routes
             config.MapHttpAttributeRoutes();
 
