@@ -47,7 +47,7 @@ namespace CardapioDigital.Api
             //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
 
-            config.SetDocumentationProvider(new XmlDocumentationProvider(System.Web.HttpContext.Current.Server.MapPath(@"~/bin/CardapioDigitalApi.Docs.xml")));
+            config.SetDocumentationProvider(new XmlDocumentationProvider(System.Web.HttpContext.Current.Server.MapPath(@"~/App_Data/CardapioDigitalApi.Docs.xml")));
             
             // Web API routes
             config.MapHttpAttributeRoutes();
