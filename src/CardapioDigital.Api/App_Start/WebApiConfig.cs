@@ -1,4 +1,5 @@
-﻿using CardapioDigital.Api.Areas.HelpPage;
+﻿using System.Web.Http.Cors;
+using CardapioDigital.Api.Areas.HelpPage;
 using CardapioDigital.Api.CustomHandlers;
 using CardapioDigital.Infra;
 using Elmah.Contrib.WebApi;
@@ -42,9 +43,7 @@ namespace CardapioDigital.Api
             // Install-Package Microsoft.AspNet.WebApi.OData -Version 5.3.0
             // config.EnableQuerySupport(new QueryableAttribute());
 
-            //config.EnableCors();
-            //config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
-            //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
 
             config.SetDocumentationProvider(new XmlDocumentationProvider(System.Web.HttpContext.Current.Server.MapPath(@"~/App_Data/CardapioDigitalApi.Docs.xml")));
