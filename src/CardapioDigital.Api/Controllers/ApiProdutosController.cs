@@ -65,46 +65,6 @@ namespace CardapioDigital.Api.Controllers
         }
 
         /// <summary>
-        /// Obter produtos por categoria
-        /// </summary>
-        /// <remarks>
-        /// Obtém os produtos da categoria solicitada
-        /// </remarks>
-        /// <param name="idCategoria">id da categoria</param>
-        /// <response code="200">Ok</response>
-        /// <response code="401">Unauthorized</response>
-        /// <response code="500">InternalServerError</response>
-        [HttpGet, Route("categoria/{idCategoria:int}")]
-        [ResponseType(typeof(IEnumerable<ProdutoDto>))]
-        public IHttpActionResult ObterProdutosPorCategoria(int idCategoria)
-        {
-            //TODO: Refatorar ObterProdutos
-            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria: idCategoria, idSubcategoria: 0);
-
-            return Ok(produtos);
-        }
-
-        /// <summary>
-        /// Obter produtos por subcategoria
-        /// </summary>
-        /// <remarks>
-        /// Obtém os produtos da subcategoria solicitada
-        /// </remarks>
-        /// <param name="idSubcategoria">id da subcategoria</param>
-        /// <response code="200">Ok</response>
-        /// <response code="401">Unauthorized</response>
-        /// <response code="500">InternalServerError</response>
-        [HttpGet, Route("subcategoria/{idSubcategoria:int}")]
-        [ResponseType(typeof(IEnumerable<ProdutoDto>))]
-        public IHttpActionResult ObterProdutosPorSubcategoria(int idSubcategoria)
-        {
-            //TODO: Refatorar ObterProdutos
-            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria: 0, idSubcategoria: idSubcategoria);
-
-            return Ok(produtos);
-        }
-
-        /// <summary>
         /// Cria um novo produto
         /// </summary>
         /// <param name="novoProduto">Informações do produto</param>
@@ -118,8 +78,6 @@ namespace CardapioDigital.Api.Controllers
             var produtoCriado = new { Id = 999, Nome = "Implementar" };
 
             return CreatedAtRoute("ObterProdutoPorId", new { id = 999 }, produtoCriado);
-
-            return new CardapioDigital.Api.ActionResults.CreatedContentActionResult(Request, Url.Link("Produtos", new { idProduto = 999 }));
         }
 
         /// <summary>

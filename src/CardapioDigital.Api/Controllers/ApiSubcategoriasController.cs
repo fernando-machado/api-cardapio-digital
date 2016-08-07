@@ -9,7 +9,7 @@ namespace CardapioDigital.Api.Controllers
     /// <summary>
     /// Subcategorias Controller
     /// </summary>
-    [RoutePrefix("api/v1/categorias/{idCategoria}/subcategorias")]
+    [RoutePrefix("api/v1/subcategorias")]
     public class SubcategoriasController : ApiController
     {
         private readonly GerenciamentoEstoque _gerenciamentoEstoque;
@@ -24,31 +24,11 @@ namespace CardapioDigital.Api.Controllers
         }
 
         /// <summary>
-        /// Obter subcategorias por categoria
-        /// </summary>
-        /// <remarks>
-        /// Obtém as subcategorias da categoria solicitada
-        /// </remarks>
-        /// <param name="idCategoria">id da categoria</param>
-        /// <response code="200">Ok</response>
-        /// <response code="401">Unauthorized</response>
-        /// <response code="500">InternalServerError</response>
-        [HttpGet, Route("")]
-        [ResponseType(typeof(IEnumerable<SubcategoriaDto>))]
-        public IHttpActionResult ObterSubcategoriasPorCategoria(int idCategoria)
-        {
-            var subcategorias = _gerenciamentoEstoque.ObterTodasSubcategorias(idCategoria);
-
-            return Ok(subcategorias);
-        }
-
-        /// <summary>
         /// Obter subcategoria por id
         /// </summary>
         /// <remarks>
         /// Obtém as informações da subcategoria solicitada
         /// </remarks>
-        /// <param name="idCategoria">id da categoria</param>
         /// <param name="idSubcategoria">id da subcategoria</param>
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
@@ -56,9 +36,9 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="500">InternalServerError</response>
         [HttpGet, Route("{idSubcategoria:int}", Name = "ObterSubcategoriaPorId")]
         [ResponseType(typeof(SubcategoriaDto))]
-        public IHttpActionResult ObterSubcategoriaPorId(int idCategoria, int idSubcategoria)
+        public IHttpActionResult ObterSubcategoriaPorId(int idSubcategoria)
         {
-            var subcategoria = _gerenciamentoEstoque.ObterSubcategoriaPorId(idCategoria, idSubcategoria);
+            var subcategoria = _gerenciamentoEstoque.ObterSubcategoriaPorId(idSubcategoria);
 
             if (subcategoria == null)
                 return NotFound();
@@ -72,17 +52,16 @@ namespace CardapioDigital.Api.Controllers
         /// <remarks>
         /// Obtém os produtos da subcategoria solicitada
         /// </remarks>
-        /// <param name="idCategoria">id da categoria</param>
         /// <param name="idSubcategoria">id da subcategoria</param>
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
         [HttpGet, Route("{idSubcategoria:int}/produtos")]
         [ResponseType(typeof(IEnumerable<ProdutoDto>))]
-        public IHttpActionResult ObterProdutosPorSubcategoria(int idCategoria, int idSubcategoria)
+        public IHttpActionResult ObterProdutosPorSubcategoria(int idSubcategoria)
         {
             //TODO: Refatorar ObterProdutos
-            var produtos = _gerenciamentoEstoque.ObterProdutos(idCategoria, idSubcategoria);
+            var produtos = _gerenciamentoEstoque.ObterProdutos(0, idSubcategoria);
 
             return Ok(produtos);
         }
@@ -90,14 +69,13 @@ namespace CardapioDigital.Api.Controllers
         /// <summary>
         /// Cria uma nova subcategoria
         /// </summary>
-        /// <param name="idCategoria">id da categoria</param>
         /// <param name="novaSubcategoria">Informações da subcategoria</param>
         /// <response code="201">Created</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
         [HttpPost, Route("")]
         [ResponseType(typeof(SubcategoriaDto))]
-        public IHttpActionResult CriarSubcategoria(int idCategoria, [FromBody]SubcategoriaDto novaSubcategoria)
+        public IHttpActionResult CriarSubcategoria([FromBody]SubcategoriaDto novaSubcategoria)
         {
             if (!ModelState.IsValid) 
                 return BadRequest(ModelState);
@@ -111,7 +89,6 @@ namespace CardapioDigital.Api.Controllers
         /// <summary>
         /// Altera uma subcategoria existente
         /// </summary>
-        /// <param name="idCategoria">id da categoria</param>
         /// <param name="idSubcategoria">id da subcategoria</param>
         /// <param name="subcategoriaParaAlterar">Informações da subcategoria para serem alteradas</param>
         /// <response code="200">Ok</response>
@@ -120,12 +97,12 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="500">InternalServerError</response>
         [HttpPut, Route("{idSubcategoria:int}")]
         [ResponseType(typeof(SubcategoriaDto))]
-        public IHttpActionResult AlterarSubcategoria(int idCategoria, int idSubcategoria, [FromBody]SubcategoriaDto subcategoriaParaAlterar)
+        public IHttpActionResult AlterarSubcategoria(int idSubcategoria, [FromBody]SubcategoriaDto subcategoriaParaAlterar)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var subcategoriaExistente = _gerenciamentoEstoque.ObterSubcategoriaPorId(idCategoria, idSubcategoria);
+            var subcategoriaExistente = _gerenciamentoEstoque.ObterSubcategoriaPorId(idSubcategoria);
 
             if (subcategoriaExistente == null)
                 return NotFound();
@@ -138,13 +115,12 @@ namespace CardapioDigital.Api.Controllers
         /// <summary>
         /// Exclui uma subcategoria
         /// </summary>
-        /// <param name="idCategoria">id da categoria</param>
         /// <param name="idSubcategoria">id da subcategoria</param>
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
         [HttpDelete, Route("{idSubcategoria:int}")]
-        public IHttpActionResult ExcluirSubcategoria(int idCategoria, int idSubcategoria)
+        public IHttpActionResult ExcluirSubcategoria(int idSubcategoria)
         {
             //TODO: Excluir informações no DB
             

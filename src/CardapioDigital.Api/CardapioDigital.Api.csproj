@@ -199,11 +199,11 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ApiProdutosController.cs" />
     <Compile Include="Controllers\ApiSubcategoriasController.cs" />
-    <Compile Include="Controllers\ApiParciaisController.cs" />
-    <Compile Include="Controllers\ApiItensParcialController.cs" />
+    <Compile Include="Controllers\ApiContasParciaisController.cs" />
+    <Compile Include="Controllers\ApiItensContaParcialController.cs" />
     <Compile Include="Controllers\ApiAvaliacoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ApiPedidosController.cs" />
+    <Compile Include="Controllers\ApiItensPedidoController.cs" />
     <Compile Include="Controllers\ApiSolicitacoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +214,7 @@
   <ItemGroup>
     <Content Include="App_Data\CardapioDigitalApi.Docs.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -277,6 +278,7 @@
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="ToDoList.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -14,6 +14,11 @@ namespace CardapioDigital.Api.CustomHandlers
     /// </summary>
     public class GlobalExceptionHandler : ExceptionHandler
     {
+        /// <summary>
+        /// Handle Async
+        /// </summary>
+        /// <param name="context">Exception handler context</param>
+        /// <param name="cancellationToken">Cancellation token</param>
         public async override Task HandleAsync(ExceptionHandlerContext context, CancellationToken cancellationToken)
         {
             var exceptionMessage = context.Exception.Message;

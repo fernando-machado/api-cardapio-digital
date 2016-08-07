@@ -1,3 +1,5 @@
+#pragma warning disable 1591
+
 namespace CardapioDigital.Api.Areas.HelpPage.ModelDescriptions
 {
     public class EnumValueDescription
@@ -9,3 +11,5 @@ namespace CardapioDigital.Api.Areas.HelpPage.ModelDescriptions
         public string Value { get; set; }
     }
 }
+
+#pragma warning restore 1591

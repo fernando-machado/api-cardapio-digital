@@ -3,16 +3,23 @@ using System.Web.Mvc;
 
 namespace CardapioDigital.Api.Areas.HelpPage
 {
+    /// <summary>
+    /// HelpPage Area Registration
+    /// </summary>
     public class HelpPageAreaRegistration : AreaRegistration
     {
+        /// <summary>
+        /// Area Name
+        /// </summary>
         public override string AreaName
         {
-            get
-            {
-                return "HelpPage";
-            }
+            get { return "HelpPage"; }
         }
 
+        /// <summary>
+        /// Register Area
+        /// </summary>
+        /// <param name="context"></param>
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(

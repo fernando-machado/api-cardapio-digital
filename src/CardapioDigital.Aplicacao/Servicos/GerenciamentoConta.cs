@@ -41,7 +41,7 @@ namespace CardapioDigital.Aplicacao.Servicos
             return MapeamentoDtoHelper.MapContaCompletaParaDto(conta);
         }
 
-        public IEnumerable<ItemPedidoDto> ObterPedidos(int codigoConta)
+        public IEnumerable<ItemPedidoDto> ObterTodosItensPedido(int codigoConta)
         {
             var conta = ObterContaInterno(codigoConta);
             var itensPedidoConta = conta.Pedido.ToList();
@@ -94,23 +94,23 @@ namespace CardapioDigital.Aplicacao.Servicos
             return contasParciaisDtos;
         }
 
-        public ContaParcialDto ObterContaParcial(int codigoConta, int codigoContaParcial)
+        public ContaParcialDto ObterContaParcial(int codigoContaParcial)
         {
-            var contaParcial = ObterContaParcialInterno(codigoConta, codigoContaParcial);
+            var contaParcial = ObterContaParcialInterno(codigoContaParcial);
 
             return MapeamentoDtoHelper.MapContaParcialCompletaParaDto(contaParcial);
         }
 
-        public ItemPedidoDto ObterItemDaContaParcial(int codigoConta, int codigoContaParcial, int codigoItemPedido)
+        public ItemPedidoDto ObterItemDaContaParcial(int codigoContaParcial, int codigoItemPedido)
         {
-            var itemPedido = ObterItemPedidoContaParcialInterno(codigoConta, codigoContaParcial, codigoItemPedido);
+            var itemPedido = ObterItemPedidoContaParcialInterno(codigoContaParcial, codigoItemPedido);
 
             return MapeamentoDtoHelper.MapItemPedidoCompletoParaDto(itemPedido);
         }
 
-        public IEnumerable<ItemPedidoDto> ObterItensDaContaParcial(int codigoConta, int codigoContaParcial)
+        public IEnumerable<ItemPedidoDto> ObterItensDaContaParcial(int codigoContaParcial)
         {
-            var contaParcial = ObterContaParcialInterno(codigoConta, codigoContaParcial);
+            var contaParcial = ObterContaParcialInterno(codigoContaParcial);
 
             return contaParcial.Itens.Select(MapeamentoDtoHelper.MapItemPedidoCompletoParaDto);
         }
@@ -169,9 +169,9 @@ namespace CardapioDigital.Aplicacao.Servicos
             return MapeamentoDtoHelper.MapContaParcialCompletaParaDto(contaParcial);
         }
 
-        public ItemPedidoDto CriarItemNaContaParciai(int codigoConta, int codigoContaParcial, NovoItemContaParcialDto novoItemContaParcial)
+        public ItemPedidoDto CriarItemNaContaParcial(int codigoContaParcial, NovoItemContaParcialDto novoItemContaParcial)
         {
-            var conta = ObterContaInterno(codigoConta);
+            var conta = ObterContaPorIdParcialInterno(codigoContaParcial);
             var contaParcial = ObterContaParcialInterno(conta, codigoContaParcial);
 
             var itemPedido = conta.Pedido.SingleOrDefault(ip => ip.Codigo == novoItemContaParcial.CodigoItemPedido);
@@ -184,18 +184,18 @@ namespace CardapioDigital.Aplicacao.Servicos
             return MapeamentoDtoHelper.MapItemPedidoCompletoParaDto(itemPedido);
         }
 
-        public void RemoverContaParcial(int codigoConta, int codigoContaParcial)
+        public void RemoverContaParcial(int idContaParcial)
         {
-            var conta = ObterContaInterno(codigoConta);
+            var conta = ObterContaPorIdParcialInterno(idContaParcial);
 
-            conta.RemoverContaParcial(codigoContaParcial);
+            conta.RemoverContaParcial(idContaParcial);
 
             _unidadeDeTrabalho.Commit();
         }
 
-        public void RemoverItemContaParcial(int codigoConta, int codigoContaParcial, int codigoItemPedido)
+        public void RemoverItemContaParcial(int codigoContaParcial, int codigoItemPedido)
         {
-            var contaParcial = ObterContaParcialInterno(codigoConta, codigoContaParcial);
+            var contaParcial = ObterContaParcialInterno(codigoContaParcial);
 
             contaParcial.RemoverItemPedido(codigoItemPedido);
 
@@ -260,7 +260,7 @@ namespace CardapioDigital.Aplicacao.Servicos
             _unidadeDeTrabalho.Commit();
         }
 
-        public void AtualizarSituacaoPedido(int codigoConta, int codigoItemPedido, NovaSituacaoPreparoDto novaSituacaoPreparo)
+        public ItemPedido AtualizarSituacaoPedido(int codigoConta, int codigoItemPedido, NovaSituacaoPreparoDto novaSituacaoPreparo)
         {
             var itemPedido = ObterItemPedidoInterno(codigoConta, codigoItemPedido);
 
@@ -271,6 +271,8 @@ namespace CardapioDigital.Aplicacao.Servicos
             itemPedido.AtualizarSituacaoPreparo(situacaoPreparo.Value);
 
             _unidadeDeTrabalho.Commit();
+
+            return itemPedido;
         }
 
 
@@ -279,6 +281,15 @@ namespace CardapioDigital.Aplicacao.Servicos
             var conta = _repositorioContas.ObterPorId(codigoConta);
             if (conta == null)
                 throw new ContaNaoEncontradaException("Não exite uma conta com o código {0}", codigoConta);
+
+            return conta;
+        }
+
+        private Conta ObterContaPorIdParcialInterno(int idContaParcial)
+        {
+            var conta = _repositorioContas.ObterTodosOnde(c => c.Parciais.Any(p => p.Codigo == idContaParcial)).FirstOrDefault();
+            if (conta == null)
+                throw new ContaNaoEncontradaException("Não exite uma conta parcial com o código {0}", idContaParcial);
 
             return conta;
         }
@@ -303,9 +314,9 @@ namespace CardapioDigital.Aplicacao.Servicos
             return produto;
         }
 
-        private ContaParcial ObterContaParcialInterno(int codigoConta, int codigoContaParcial)
+        private ContaParcial ObterContaParcialInterno(int codigoContaParcial)
         {
-            var conta = ObterContaInterno(codigoConta);
+            var conta = ObterContaPorIdParcialInterno(codigoContaParcial);
 
             return ObterContaParcialInterno(conta, codigoContaParcial);
         }
@@ -319,9 +330,9 @@ namespace CardapioDigital.Aplicacao.Servicos
             return contaParcial;
         }
 
-        private ItemPedido ObterItemPedidoContaParcialInterno(int codigoConta, int codigoContaParcial, int codigoItemPedido)
+        private ItemPedido ObterItemPedidoContaParcialInterno(int codigoContaParcial, int codigoItemPedido)
         {
-            var contaParcial = ObterContaParcialInterno(codigoConta, codigoContaParcial);
+            var contaParcial = ObterContaParcialInterno(codigoContaParcial);
 
             var itemPedido = contaParcial.Itens.SingleOrDefault(i => i.Codigo == codigoItemPedido);
             if (itemPedido == null)

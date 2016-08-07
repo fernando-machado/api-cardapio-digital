@@ -63,6 +63,25 @@ namespace CardapioDigital.Api.Controllers
         }
 
         /// <summary>
+        /// Obter subcategorias por categoria
+        /// </summary>
+        /// <remarks>
+        /// Obtém as subcategorias da categoria solicitada
+        /// </remarks>
+        /// <param name="idCategoria">id da categoria</param>
+        /// <response code="200">Ok</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">InternalServerError</response>
+        [HttpGet, Route("{idCategoria}/subcategorias")]
+        [ResponseType(typeof(IEnumerable<SubcategoriaDto>))]
+        public IHttpActionResult ObterSubcategoriasPorCategoria(int idCategoria)
+        {
+            var subcategorias = _gerenciamentoEstoque.ObterTodasSubcategorias(idCategoria);
+
+            return Ok(subcategorias);
+        }
+
+        /// <summary>
         /// Obter produtos por categoria
         /// </summary>
         /// <remarks>

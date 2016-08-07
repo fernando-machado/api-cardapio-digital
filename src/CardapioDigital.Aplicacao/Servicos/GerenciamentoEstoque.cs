@@ -45,10 +45,9 @@ namespace CardapioDigital.Aplicacao.Servicos
 
         public IEnumerable<ProdutoDto> ObterProdutos(int idCategoria, int idSubcategoria)
         {
-            if (idSubcategoria > 0)
-                return ObterProdutosDaSubcategoria(idSubcategoria);
-
-            return ObterProdutosDaCategoria(idCategoria);
+            return idSubcategoria > 0 
+                ? ObterProdutosDaSubcategoria(idSubcategoria) 
+                : ObterProdutosDaCategoria(idCategoria);
         }
 
         private IEnumerable<ProdutoDto> ObterProdutosDaCategoria(int codigoCategoria)
@@ -101,9 +100,9 @@ namespace CardapioDigital.Aplicacao.Servicos
                     : categoria.Subcategorias.Select(MapeamentoDtoHelper.MapSubcategoriaCompletaParaDto);
         }
 
-        public SubcategoriaDto ObterSubcategoriaPorId(int idCategoria, int idSubcategoria)
+        public SubcategoriaDto ObterSubcategoriaPorId(int idSubcategoria)
         {
-            var categoria = _categorias.ObterPorId(idCategoria);
+            var categoria = _categorias.ObterTodosOnde(c => c.Subcategorias.Any(s => s.Codigo == idSubcategoria)).FirstOrDefault();
             if (categoria == null)
                 return null;
 

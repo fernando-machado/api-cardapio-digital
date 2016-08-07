@@ -9,6 +9,27 @@
             Global Exception Handler
             </summary>
         </member>
+        <member name="M:CardapioDigital.Api.CustomHandlers.GlobalExceptionHandler.HandleAsync(System.Web.Http.ExceptionHandling.ExceptionHandlerContext,System.Threading.CancellationToken)">
+            <summary>
+            Handle Async
+            </summary>
+            <param name="context">Exception handler context</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="T:CardapioDigital.Api.BundleConfig">
+            <summary>
+            Bundle Config
+            </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            Register Bundles
+            </summary>
+            <remarks>
+            For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
+            </remarks>
+            <param name="bundles"></param>
+        </member>
         <member name="T:CardapioDigital.Api.FilterConfig">
             <summary>
             Filter Config
@@ -19,6 +40,17 @@
             RegisterGlobalFilters
             </summary>
             <param name="filters">Filters</param>
+        </member>
+        <member name="T:CardapioDigital.Api.RouteConfig">
+            <summary>
+            Route Config
+            </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Register Routes
+            </summary>
+            <param name="routes">Routes</param>
         </member>
         <member name="T:CardapioDigital.Api.SwaggerConfig">
             <summary>
@@ -58,6 +90,27 @@
         <member name="T:CardapioDigital.Api.Areas.HelpPage.Controllers.HelpController">
             <summary>
             The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="T:CardapioDigital.Api.Areas.HelpPage.HelpPageAreaRegistration">
+            <summary>
+            HelpPage Area Registration
+            </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.Areas.HelpPage.HelpPageAreaRegistration.RegisterArea(System.Web.Mvc.AreaRegistrationContext)">
+            <summary>
+            Register Area
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:CardapioDigital.Api.Areas.HelpPage.HelpPageAreaRegistration.AreaName">
+            <summary>
+            Area Name
+            </summary>
+        </member>
+        <member name="T:CardapioDigital.Api.Areas.HelpPage.HelpPageConfigurationExtensions">
+            <summary>
+            Help page configuration extensions
             </summary>
         </member>
         <member name="M:CardapioDigital.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
@@ -553,6 +606,18 @@
             <response code="404">NotFound</response>
             <response code="500">InternalServerError</response>
         </member>
+        <member name="M:CardapioDigital.Api.Controllers.CategoriasController.ObterSubcategoriasPorCategoria(System.Int32)">
+            <summary>
+            Obter subcategorias por categoria
+            </summary>
+            <remarks>
+            Obtém as subcategorias da categoria solicitada
+            </remarks>
+            <param name="idCategoria">id da categoria</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
         <member name="M:CardapioDigital.Api.Controllers.CategoriasController.ObterProdutosPorCategoria(System.Int32)">
             <summary>
             Obter produtos por categoria
@@ -598,6 +663,56 @@
             <summary>
             Contas Controller
             </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasController.#ctor(CardapioDigital.Aplicacao.Servicos.GerenciamentoConta)">
+            <summary>
+            Initialize instance of <see cref="T:CardapioDigital.Api.Controllers.ContasController"/>
+            </summary>
+            <param name="gerenciamentoConta">Repositório de gerenciamento de contas</param>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasController.ObterTodasContas">
+            <summary>
+            Obter todas as contas
+            </summary>
+            <remarks>
+            Obtém todas as contas cadastradas
+            </remarks>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasController.ObterContaPorId(System.Int32)">
+            <summary>
+            Obter conta por id
+            </summary>
+            <remarks>
+            Obtém as informações da conta solicitada
+            </remarks>
+            <param name="idConta">id da conta</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">NotFound</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasController.CriarConta(CardapioDigital.Aplicacao.DTO.MesaDto)">
+            <summary>
+            Cria uma nova conta
+            </summary>
+            <param name="mesa">Informações da conta</param>
+            <response code="201">Created</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasController.AlterarConta(System.Int32,CardapioDigital.Aplicacao.DTO.FechamentoContaDto)">
+            <summary>
+            Altera uma conta existente
+            </summary>
+            <param name="idConta">Id da conta</param>
+            <param name="contaParaAtualizar">Informações da conta para serem alteradas</param>
+            <response code="200">Ok</response>
+            <response code="404">NotFound</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
         </member>
         <member name="T:CardapioDigital.Api.Controllers.ErrorController">
             <summary>
@@ -647,30 +762,6 @@
             <response code="404">NotFound</response>
             <response code="500">InternalServerError</response>
         </member>
-        <member name="M:CardapioDigital.Api.Controllers.ProdutosController.ObterProdutosPorCategoria(System.Int32)">
-            <summary>
-            Obter produtos por categoria
-            </summary>
-            <remarks>
-            Obtém os produtos da categoria solicitada
-            </remarks>
-            <param name="idCategoria">id da categoria</param>
-            <response code="200">Ok</response>
-            <response code="401">Unauthorized</response>
-            <response code="500">InternalServerError</response>
-        </member>
-        <member name="M:CardapioDigital.Api.Controllers.ProdutosController.ObterProdutosPorSubcategoria(System.Int32)">
-            <summary>
-            Obter produtos por subcategoria
-            </summary>
-            <remarks>
-            Obtém os produtos da subcategoria solicitada
-            </remarks>
-            <param name="idSubcategoria">id da subcategoria</param>
-            <response code="200">Ok</response>
-            <response code="401">Unauthorized</response>
-            <response code="500">InternalServerError</response>
-        </member>
         <member name="M:CardapioDigital.Api.Controllers.ProdutosController.CriarProduto(CardapioDigital.Aplicacao.DTO.ProdutoDto)">
             <summary>
             Cria um novo produto
@@ -711,60 +802,44 @@
             </summary>
             <param name="gerenciamentoEstoque">Repositório de gerenciamento de estoque</param>
         </member>
-        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ObterSubcategoriasPorCategoria(System.Int32)">
-            <summary>
-            Obter subcategorias por categoria
-            </summary>
-            <remarks>
-            Obtém as subcategorias da categoria solicitada
-            </remarks>
-            <param name="idCategoria">id da categoria</param>
-            <response code="200">Ok</response>
-            <response code="401">Unauthorized</response>
-            <response code="500">InternalServerError</response>
-        </member>
-        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ObterSubcategoriaPorId(System.Int32,System.Int32)">
+        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ObterSubcategoriaPorId(System.Int32)">
             <summary>
             Obter subcategoria por id
             </summary>
             <remarks>
             Obtém as informações da subcategoria solicitada
             </remarks>
-            <param name="idCategoria">id da categoria</param>
             <param name="idSubcategoria">id da subcategoria</param>
             <response code="200">Ok</response>
             <response code="401">Unauthorized</response>
             <response code="404">NotFound</response>
             <response code="500">InternalServerError</response>
         </member>
-        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ObterProdutosPorSubcategoria(System.Int32,System.Int32)">
+        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ObterProdutosPorSubcategoria(System.Int32)">
             <summary>
             Obter produtos por subcategoria
             </summary>
             <remarks>
             Obtém os produtos da subcategoria solicitada
             </remarks>
-            <param name="idCategoria">id da categoria</param>
             <param name="idSubcategoria">id da subcategoria</param>
             <response code="200">Ok</response>
             <response code="401">Unauthorized</response>
             <response code="500">InternalServerError</response>
         </member>
-        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.CriarSubcategoria(System.Int32,CardapioDigital.Aplicacao.DTO.SubcategoriaDto)">
+        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.CriarSubcategoria(CardapioDigital.Aplicacao.DTO.SubcategoriaDto)">
             <summary>
             Cria uma nova subcategoria
             </summary>
-            <param name="idCategoria">id da categoria</param>
             <param name="novaSubcategoria">Informações da subcategoria</param>
             <response code="201">Created</response>
             <response code="401">Unauthorized</response>
             <response code="500">InternalServerError</response>
         </member>
-        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.AlterarSubcategoria(System.Int32,System.Int32,CardapioDigital.Aplicacao.DTO.SubcategoriaDto)">
+        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.AlterarSubcategoria(System.Int32,CardapioDigital.Aplicacao.DTO.SubcategoriaDto)">
             <summary>
             Altera uma subcategoria existente
             </summary>
-            <param name="idCategoria">id da categoria</param>
             <param name="idSubcategoria">id da subcategoria</param>
             <param name="subcategoriaParaAlterar">Informações da subcategoria para serem alteradas</param>
             <response code="200">Ok</response>
@@ -772,12 +847,146 @@
             <response code="401">Unauthorized</response>
             <response code="500">InternalServerError</response>
         </member>
-        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ExcluirSubcategoria(System.Int32,System.Int32)">
+        <member name="M:CardapioDigital.Api.Controllers.SubcategoriasController.ExcluirSubcategoria(System.Int32)">
             <summary>
             Exclui uma subcategoria
             </summary>
-            <param name="idCategoria">id da categoria</param>
             <param name="idSubcategoria">id da subcategoria</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="T:CardapioDigital.Api.Controllers.ContasParciaisController">
+            <summary>
+            Parciais Controller
+            </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasParciaisController.#ctor(CardapioDigital.Aplicacao.Servicos.GerenciamentoConta)">
+            <summary>
+            Initialize instance of <see cref="T:CardapioDigital.Api.Controllers.ContasParciaisController"/>
+            </summary>
+            <param name="gerenciamentoConta">Repositório de gerenciamento de contas</param>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasParciaisController.ObterContasParciasDaConta(System.Int32)">
+            <summary>
+            Obter todas as contas parciais da conta
+            </summary>
+            <remarks>
+            Obtém todas as contas parciais da conta informada
+            </remarks>
+            <param name="idConta">Id da conta</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasParciaisController.CriarContaParcial(System.Int32,CardapioDigital.Aplicacao.DTO.NovaContaParcial)">
+            <summary>
+            Cria uma nova conta parcial
+            </summary>
+            <param name="idConta">Id da conta</param>
+            <param name="novaContaParcial">Informações da conta parcial</param>
+            <response code="201">Created</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasParciaisController.ObterContaParcialPorId(System.Int32)">
+            <summary>
+            Obter conta parcial por id
+            </summary>
+            <remarks>
+            Obtém as informações da conta parcial solicitada
+            </remarks>
+            <param name="idParcial">Id da conta parcial</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">NotFound</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasParciaisController.AlterarContaParcial(System.Int32,CardapioDigital.Aplicacao.DTO.ContaParcialDto)">
+            <summary>
+            Altera uma conta parcial existente
+            </summary>
+            <param name="idParcial">Id da conta parcial</param>
+            <param name="contaParcialParaAtualizar">Informações da conta parcial para serem alteradas</param>
+            <response code="200">Ok</response>
+            <response code="404">NotFound</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ContasParciaisController.ExcluirContaParcial(System.Int32)">
+            <summary>
+            Exclui uma conta parcial
+            </summary>
+            <param name="idParcial">Id da conta parcial</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="T:CardapioDigital.Api.Controllers.ItensContaParcialController">
+            <summary>
+            Itens Conta Parcial Controller
+            </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensContaParcialController.#ctor(CardapioDigital.Aplicacao.Servicos.GerenciamentoConta)">
+            <summary>
+            Initialize instance of <see cref="T:CardapioDigital.Api.Controllers.ItensContaParcialController"/>
+            </summary>
+            <param name="gerenciamentoConta">Repositório de gerenciamento de contas</param>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensContaParcialController.ObterTodosItensContaParcial(System.Int32)">
+            <summary>
+            Obter todos os itens das contas parciais
+            </summary>
+            <remarks>
+            Obtém todos os itens das contas parciais cadastradas
+            </remarks>
+            <param name="idParcial">Id da conta parcial</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensContaParcialController.ObterItemContaParcialPorId(System.Int32,System.Int32)">
+            <summary>
+            Obter item da conta parcial por id
+            </summary>
+            <remarks>
+            Obtém as informações do item da conta parcial solicitado
+            </remarks>
+            <param name="idParcial">Id da conta parcial</param>
+            <param name="idItem">Id do item da conta parcial</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">NotFound</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensContaParcialController.CriarItemContaParcial(System.Int32,CardapioDigital.Aplicacao.DTO.NovoItemContaParcialDto)">
+            <summary>
+            Adiciona um novo item à conta parcial
+            </summary>
+            <param name="idParcial">Id da conta parcial</param>
+            <param name="novoItemContaParcial">Informações do novo item da conta parcial</param>
+            <response code="201">Created</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensContaParcialController.AlterarItemContaParcial(System.Int32,System.Int32,CardapioDigital.Aplicacao.DTO.ItemPedidoDto)">
+            <summary>
+            Altera um item de uma conta parcial existente
+            </summary>
+            <param name="idParcial">Id da conta parcial</param>
+            <param name="idItem">Id do item da conta parcial</param>
+            <param name="itemContaParcialParaAtualizar">Informações do item da conta parcial para serem alteradas</param>
+            <response code="200">Ok</response>
+            <response code="404">NotFound</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensContaParcialController.ExcluirItemContaParcial(System.Int32,System.Int32)">
+            <summary>
+            Exclui um item de uma conta parcial
+            </summary>
+            <param name="idParcial">Id da conta parcial</param>
+            <param name="idItem">Id do item da conta parcial</param>
             <response code="200">Ok</response>
             <response code="401">Unauthorized</response>
             <response code="500">InternalServerError</response>
@@ -799,7 +1008,7 @@
             Obter todas as avaliações
             </summary>
             <remarks>
-            Obtém todos as avaliações cadastrados
+            Obtém todas as avaliações cadastrados
             </remarks>
             <response code="200">OK</response>
             <response code="401">Unauthorized</response>
@@ -863,6 +1072,80 @@
             Index Action
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:CardapioDigital.Api.Controllers.ItensPedidoController">
+            <summary>
+            Pedidos Controller
+            </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensPedidoController.#ctor(CardapioDigital.Aplicacao.Servicos.GerenciamentoConta)">
+            <summary>
+            Initialize instance of <see cref="T:CardapioDigital.Api.Controllers.ItensPedidoController"/>
+            </summary>
+            <param name="gerenciamentoConta">Repositório de gerenciamento de contas</param>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensPedidoController.ObterTodosItensPedido(System.Int32,System.Int32)">
+            <summary>
+            Obter todos os pedidos da conta
+            </summary>
+            <remarks>
+            Obtém todos os pedidos da conta informada
+            </remarks>
+            <param name="idConta">Id da conta</param>
+            <param name="idPedido">Id do pedido</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensPedidoController.ObterItemPedidoPorId(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Obter item dp pedido por id
+            </summary>
+            <remarks>
+            Obtém as informações do item do pedido solicitado
+            </remarks>
+            <param name="idConta">Id da conta</param>
+            <param name="idPedido">Id do pedido</param>
+            <param name="idItem">Id do item</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">NotFound</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensPedidoController.CriarItemPedido(System.Int32,System.Int32,CardapioDigital.Aplicacao.DTO.NovoItemPedidoDto)">
+            <summary>
+            Adiciona um novo item ao pedido
+            </summary>
+            <param name="idConta">Id da conta</param>
+            <param name="idPedido">Id do pedido</param>
+            <param name="novoItemPedido">Informações do novo item do pedido</param>
+            <response code="201">Created</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensPedidoController.AlterarItemPedido(System.Int32,System.Int32,System.Int32,CardapioDigital.Aplicacao.DTO.NovaSituacaoPreparoDto)">
+            <summary>
+            Altera um item de um pedido existente
+            </summary>
+            <param name="idConta">Id da conta</param>
+            <param name="idPedido">Id do pedido</param>
+            <param name="idItem">Id do item</param>
+            <param name="itemPedidoParaAlterar">Informações do item do pedidol para serem alteradas</param>
+            <response code="200">Ok</response>
+            <response code="404">NotFound</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
+        </member>
+        <member name="M:CardapioDigital.Api.Controllers.ItensPedidoController.ExcluirItemPedido(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Exclui um item de um pedido
+            </summary>
+            <param name="idConta">Id da conta</param>
+            <param name="idPedido">Id do pedido</param>
+            <param name="idItem">Id do item</param>
+            <response code="200">Ok</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">InternalServerError</response>
         </member>
         <member name="T:CardapioDigital.Api.Controllers.SolicitacoesController">
             <summary>
@@ -979,6 +1262,14 @@
             <summary>
             Logging Handler
             </summary>
+        </member>
+        <member name="M:CardapioDigital.Api.CustomHandlers.RequestsLoggingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Send Async
+            </summary>
+            <param name="request">Request message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

@@ -30,77 +30,76 @@ POST	api/v1/contas/{idConta}/solicitacoes
 
 --## Produtos ##
 
-GET		api/v1/produtos	
-GET		api/v1/produtos/{idProduto}	
-POST	api/v1/produtos
-PUT		api/v1/produtos/{idProduto}	
-DELETE	api/v1/produtos/{idProduto}
+GET		api/v1/produtos
+GET		api/v1/produtos/{idProduto}
 GET		api/v1/produtos/categoria/{idCategoria}
 GET		api/v1/produtos/subcategoria/{idSubcategoria}
+POST	api/v1/produtos
+PUT		api/v1/produtos/{idProduto}
+DELETE	api/v1/produtos/{idProduto}
 
 
 --## Categorias ##
 
 GET		api/v1/categorias
 GET		api/v1/categorias/{idCategoria}
-POST	api/v1/categorias	
-PUT		api/v1/categorias/{idCategoria}	
-DELETE	api/v1/categorias/{idCategoria}
 GET		api/v1/categorias/{idCategoria}/produtos
+GET		api/v1/categorias/{idCategoria}/subcategorias
+POST	api/v1/categorias
+PUT		api/v1/categorias/{idCategoria}
+DELETE	api/v1/categorias/{idCategoria}
 
 
 --## Subcategorias ##
 
-GET		api/v1/categorias/{idCategoria}/subcategorias
-GET		api/v1/categorias/{idCategoria}/subcategorias/{idSubcategoria}
-POST	api/v1/categorias/{idCategoria}/subcategorias
-PUT		api/v1/categorias/{idCategoria}/subcategorias/{idSubcategoria}
-DELETE	api/v1/categorias/{idCategoria}/subcategorias/{idSubcategoria}
-GET		api/v1/categorias/{idCategoria}/subcategorias/{idSubcategoria}/produtos
+GET		api/v1/subcategorias/{idSubcategoria}
+GET		api/v1/subcategorias/{idSubcategoria}/produtos
+POST	api/v1/subcategorias
+PUT		api/v1/subcategorias/{idSubcategoria}
+DELETE	api/v1/subcategorias/{idSubcategoria}
 
 
 #############------------- CONTAS -------------#############
 
 --## Contas ##
 
-GET		api/contas
-GET		api/contas/{idConta}	
-POST	api/contas	
-PUT		api/contas/{idConta}	
-DELETE	api/contas/{idConta}
+GET		api/v1/contas
+GET		api/v1/contas/{idConta}
+POST	api/v1/contas
+PUT		api/v1/contas/{idConta}
 
 
---## Parciais ##
+--## Contas Parciais ##
 
-GET		api/contas/{idConta}/parciais	
-GET		api/contas/{idConta}/parciais/{idContaParcial}	
-POST	api/contas/{idConta}/parciais	
-PUT		api/contas/{idConta}/parciais/{idContaParcial}	
-DELETE	api/contas/{idConta}/parciais/{idContaParcial}
+GET		api/v1/contas/{idConta}/parciais
+POST	api/v1/contas/{idConta}/parciais
+PUT		api/v1/parciais/{idParcial}
+DELETE	api/v1/parciais/{idParcial}
+GET		api/v1/parciais/{idParcial}
 
 
---## Itens Conta Parcial ##
+--## Itens de Contas Parciais ##
 
-GET		api/contas/{idConta}/parciais/{idContaParcial}/itens	
-GET		api/contas/{idConta}/parciais/{idContaParcial}/itens/{idItem}	
-POST	api/contas/{idConta}/parciais/{idContaParcial}/itens	
-PUT		api/contas/{idConta}/parciais/{idContaParcial}/itens/{idItem}	
-DELETE	api/contas/{idConta}/parciais/{idContaParcial}/itens/{idItem}
+GET		api/v1/parciais/{idParcial}/itens
+GET		api/v1/parciais/{idParcial}/itens/{idItem}
+POST	api/v1/parciais/{idParcial}/itens
+PUT		api/v1/parciais/{idParcial}/itens/{idItem}
+DELETE	api/v1/parciais/{idParcial}/itens/{idItem}
 
 
 --## Pedidos ##
 
-GET		api/contas/{idConta}/pedidos	
-GET		api/contas/{idConta}/pedidos/{idPedido}	
-POST	api/contas/{idConta}/pedidos	
-PUT		api/contas/{idConta}/pedidos/{idPedido}	
-DELETE	api/contas/{idConta}/pedidos/{idPedido}
+GET		api/v1/contas/{idConta}/pedidos
+GET		api/v1/contas/{idConta}/pedidos/{idPedido}
+POST	api/v1/contas/{idConta}/pedidos
+PUT		api/v1/contas/{idConta}/pedidos/{idPedido}
+DELETE	api/v1/contas/{idConta}/pedidos/{idPedido}
 
 
 ## Itens Pedido ##
 
-GET		api/contas/{idConta}/pedidos/{idPedido}/itens	
-GET		api/contas/{idConta}/pedidos/{idPedido}/itens/{idItem}	
-POST	api/contas/{idConta}/pedidos/{idPedido}/itens	
-PUT		api/contas/{idConta}/pedidos/{idPedido}/itens/{idItem}	
-DELETE	api/contas/{idConta}/pedidos/{idPedido}/itens/{idItem}
+GET		api/v1/contas/{idConta}/pedidos/{idPedido}/itens
+GET		api/v1/contas/{idConta}/pedidos/{idPedido}/itens/{idItem}
+POST	api/v1/contas/{idConta}/pedidos/{idPedido}/itens
+PUT		api/v1/contas/{idConta}/pedidos/{idPedido}/itens/{idItem}
+DELETE	api/v1/contas/{idConta}/pedidos/{idPedido}/itens/{idItem}

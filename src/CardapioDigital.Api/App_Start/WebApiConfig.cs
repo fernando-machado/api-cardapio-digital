@@ -1,5 +1,4 @@
-﻿using System.Web.Http.Cors;
-using CardapioDigital.Api.Areas.HelpPage;
+﻿using CardapioDigital.Api.Areas.HelpPage;
 using CardapioDigital.Api.CustomHandlers;
 using CardapioDigital.Infra;
 using Elmah.Contrib.WebApi;
@@ -7,6 +6,8 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Batch;
+using System.Web.Http.Cors;
 using System.Web.Http.ExceptionHandling;
 
 namespace CardapioDigital.Api
@@ -45,19 +46,34 @@ namespace CardapioDigital.Api
 
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
-
             config.SetDocumentationProvider(new XmlDocumentationProvider(System.Web.HttpContext.Current.Server.MapPath(@"~/App_Data/CardapioDigitalApi.Docs.xml")));
             
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            config.Routes.MapHttpBatchRoute(
+                routeName: "WebApiBatch",
+                routeTemplate: "api/v1/batch",
+                batchHandler: new DefaultHttpBatchHandler(GlobalConfiguration.DefaultServer)
+                {
+                    ExecutionOrder = BatchExecutionOrder.NonSequential
+                });
+
             // To disable tracing in your application, please comment out or remove the following line of code
             // For more information, refer to: http://www.asp.net/web-api
             config.EnableSystemDiagnosticsTracing();
+
+            //config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.LocalOnly;
             
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
 
+            // add support for the 'format' query paramry param
+            // cref: http://blogs.msdn.com/b/hongyes/archive/2012/09/02/support-format-in-asp-net-web-api.aspx
+            config.Formatters.JsonFormatter.AddQueryStringMapping("$format", "json", "application/json");
+            config.Formatters.XmlFormatter.AddQueryStringMapping("$format", "xml", "application/xml");
+
+            
             // Enabling dependency resolver for Mvc and WebApi
             var executingAssembly = Assembly.GetExecutingAssembly();
             //Fabrica.Instancia.RegistrarControllersMvc(executingAssembly);

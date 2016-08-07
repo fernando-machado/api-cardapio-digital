@@ -31,7 +31,7 @@ namespace CardapioDigital.Api.Controllers
         /// Obter todas as avaliações
         /// </summary>
         /// <remarks>
-        /// Obtém todos as avaliações cadastrados
+        /// Obtém todas as avaliações cadastrados
         /// </remarks>
         /// <response code="200">OK</response>
         /// <response code="401">Unauthorized</response>
@@ -55,7 +55,7 @@ namespace CardapioDigital.Api.Controllers
         /// <response code="200">Ok</response>
         /// <response code="401">Unauthorized</response>
         /// <response code="500">InternalServerError</response>
-        [HttpGet, Route("{data:datetime}")]
+        [HttpGet, Route("{data:datetime:regex(\\d{4}-\\d{2}-\\d{2})}")]
         [ResponseType(typeof(IEnumerable<AvaliacaoCompletaDto>))]
         public IHttpActionResult ObterAvaliacaoPorData(DateTime data)
         {

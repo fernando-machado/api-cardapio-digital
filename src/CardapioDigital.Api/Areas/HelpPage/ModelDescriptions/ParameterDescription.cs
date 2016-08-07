@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+#pragma warning disable 1591
+
 using System.Collections.ObjectModel;
 
 namespace CardapioDigital.Api.Areas.HelpPage.ModelDescriptions

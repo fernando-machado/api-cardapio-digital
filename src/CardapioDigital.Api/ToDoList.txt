@@ -1,0 +1,84 @@
+﻿Reajustar as rotas (tb implementar versionamento)
+Fazer o tratamento de responses corretamente.
+
+Refatorar as viewModels
+
+Adicionar timestamps nas tabelas
+
+Adicionar fluentmigrations
+
+Ajustar as consultas no NHibernate (talvez refatorar os repositórios).
+
+Implementar segurança. (OAuth)
+
+Implementar paginação e HATEOAS (links).
+
+
+
+
+
+=======================================================
+/// <summary>
+/// Obter todos os produtos
+/// </summary>
+/// <remarks>
+/// Obter todos os produtos cadastrados
+/// </remarks>
+/// <returns>Lista de <see cref="ProdutoDto"/></returns>
+/// <response code="200">OK</response>
+/// <response code="201">Created</response>
+/// <response code="400">BadRequest</response>
+/// <response code="304">NotModified</response>
+/// <response code="401">Unauthorized</response>
+/// <response code="402">PaymentRequired</response>
+/// <response code="403">Forbidden</response>
+/// <response code="404">NotFound</response>
+/// <response code="415">UnsupportedMediaType</response>
+/// <response code="500">InternalServerError</response>
+/// <response code="501">NotImplemented</response>
+/// <response code="503">ServiceUnavailable</response>
+[HttpGet, Route("", Name = "ObterTodosProdutos")]
+[ResponseType(typeof(IEnumerable<ProdutoDto>))]
+
+
+
+OK = 200,
+Created = 201,
+BadRequest = 400,
+Unauthorized = 401,
+PaymentRequired = 402,
+Forbidden = 403,
+NotFound = 404,
+UnsupportedMediaType = 415,
+InternalServerError = 500,
+NotImplemented = 501,
+ServiceUnavailable = 503,
+
+=======================================================
+OK = 200,
+Created = 201,
+Accepted = 202,
+
+NoContent = 204,
+Moved = 301,
+MovedPermanently = 301,
+Redirect = 302,
+NotModified = 304,
+
+BadRequest = 400,
+Unauthorized = 401,
+PaymentRequired = 402,
+Forbidden = 403,
+NotFound = 404,
+MethodNotAllowed = 405,
+NotAcceptable = 406,
+ProxyAuthenticationRequired = 407,
+RequestTimeout = 408,
+UnsupportedMediaType = 415,
+
+InternalServerError = 500,
+NotImplemented = 501,
+BadGateway = 502,
+ServiceUnavailable = 503,
+GatewayTimeout = 504,
+HttpVersionNotSupported = 505,

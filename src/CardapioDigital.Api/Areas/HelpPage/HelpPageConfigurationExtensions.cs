@@ -16,6 +16,9 @@ using CardapioDigital.Api.Areas.HelpPage.Models;
 
 namespace CardapioDigital.Api.Areas.HelpPage
 {
+    /// <summary>
+    /// Help page configuration extensions
+    /// </summary>
     public static class HelpPageConfigurationExtensions
     {
         private const string ApiModelPrefix = "MS_HelpPageApiModel_";

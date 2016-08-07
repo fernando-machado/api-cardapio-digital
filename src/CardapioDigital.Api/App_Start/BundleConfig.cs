@@ -2,9 +2,18 @@
 
 namespace CardapioDigital.Api
 {
+    /// <summary>
+    /// Bundle Config
+    /// </summary>
     public class BundleConfig
     {
-        // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
+        /// <summary>
+        /// Register Bundles
+        /// </summary>
+        /// <remarks>
+        /// For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
+        /// </remarks>
+        /// <param name="bundles"></param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

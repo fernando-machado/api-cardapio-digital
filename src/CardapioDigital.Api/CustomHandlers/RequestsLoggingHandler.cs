@@ -14,6 +14,12 @@ namespace CardapioDigital.Api.CustomHandlers
         private const string SEPARADOR = "--------------------------------------------------------------------------------------------------------------------------------------";
         private static readonly ILog _log = LogManager.GetLogger(typeof(RequestsLoggingHandler).Name);
 
+        /// <summary>
+        /// Send Async
+        /// </summary>
+        /// <param name="request">Request message</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns></returns>
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             //Log request headers and URL
